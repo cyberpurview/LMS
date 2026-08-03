@@ -115,12 +115,7 @@ export default function StudentDashboard() {
   // Completed quizzes (passing filters)
   const completedQuizzes = quizzes.filter(q => q.status === 'COMPLETED');
 
-  // Mock Courses Data
-  const mockCourses = [
-    { id: 1, title: 'Certified in Risk and Information Systems Control (CRISC) Masterclass', progress: 85, lessons: 24, completed: 20 },
-    { id: 2, title: 'Information Security Governance & Management Foundations', progress: 45, lessons: 12, completed: 5 },
-    { id: 3, title: 'IT Risk Identification, Assessment and Strategy Design', progress: 0, lessons: 18, completed: 0 }
-  ];
+
 
   // Get active tab human-readable title
   const getTabTitle = () => {
@@ -162,16 +157,11 @@ export default function StudentDashboard() {
         )}
 
         {activeTab === 'courses' && (
-          <CoursesModule 
-            mockCourses={mockCourses}
-          />
+          <CoursesModule />
         )}
 
         {activeTab === 'certificates' && (
-          <CertificatesModule 
-            completedQuizzes={completedQuizzes}
-            setSelectedCert={setSelectedCert}
-          />
+          <CertificatesModule />
         )}
 
         {activeTab === 'support' && (

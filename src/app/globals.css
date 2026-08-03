@@ -752,44 +752,48 @@ body {
   /* Dashboard General */
   .dashboard-layout {
     flex-direction: column;
+    padding-bottom: 75px; /* Prevent main content from being hidden behind bottom nav */
   }
   
   .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    padding: 16px;
+    height: 75px;
+    padding: 0 8px;
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .sidebar-brand {
-    margin-bottom: 16px !important;
-  }
-
-  .sidebar-profile {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    gap: 12px;
+    justify-content: space-between;
+    background-color: var(--bg-sidebar);
   }
 
-  .sidebar-avatar {
-    width: 48px;
-    height: 48px;
-    font-size: 1rem;
-    margin-bottom: 0;
+  /* Target the inner wrapper div */
+  .sidebar > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
   }
 
-  .sidebar-name {
-    margin-bottom: 0;
+  .sidebar-brand,
+  .sidebar-profile {
+    display: none !important;
   }
 
   .sidebar-nav {
+    display: flex;
     flex-direction: row;
     overflow-x: auto;
-    gap: 8px;
-    padding-bottom: 8px;
+    width: 100%;
+    gap: 4px;
+    padding: 0;
     /* hide scrollbar for cleaner look */
     scrollbar-width: none; 
     -ms-overflow-style: none;
@@ -799,10 +803,30 @@ body {
   }
 
   .sidebar-link {
-    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
     padding: 8px 12px;
     width: auto;
-    font-size: 0.85rem;
+    font-size: 0.65rem;
+    white-space: nowrap;
+    border-radius: 8px;
+    background: transparent;
+    margin-top: 0 !important; /* Override logout margin */
+  }
+
+  .sidebar-link svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sidebar-link.active {
+    background-color: transparent;
+    color: #ffffff;
+    box-shadow: none;
+    font-weight: 700;
   }
 
   .main-content {
