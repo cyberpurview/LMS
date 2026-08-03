@@ -1,9 +1,9 @@
 'use client';
 
-import { Shield, BookOpen, GraduationCap, Award, HelpCircle, Settings, LogOut } from 'lucide-react';
+import { Shield, BookOpen, GraduationCap, Award, HelpCircle, Settings, LogOut, X } from 'lucide-react';
 import Image from 'next/image';
 
-export default function Sidebar({ profile, user, activeTab, setActiveTab, handleLogout }) {
+export default function Sidebar({ profile, user, activeTab, setActiveTab, handleLogout, isOpen, onClose }) {
   // Get initials for avatar placeholder
   const getInitials = () => {
     if (!profile?.username) return 'CP';
@@ -16,13 +16,23 @@ export default function Sidebar({ profile, user, activeTab, setActiveTab, handle
   };
 
   return (
-    <aside className="sidebar">
-      <div>
-        {/* Brand Header */}
-        <div className="sidebar-brand" style={{ marginBottom: '32px', display: 'flex', justifyContent: 'center' }}>
-          <Image
-            src="/logo-white.png"
-            alt="CyberPurview"
+    <>
+      {isOpen && <div className="sidebar-backdrop" onClick={onClose} />}
+      <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <button 
+          className="mobile-close-btn" 
+          onClick={onClose} 
+          type="button" 
+          style={{ display: 'none', position: 'absolute', top: '20px', right: '20px', background: 'none', border: 'none', color: '#ffffff', cursor: 'pointer' }}
+        >
+          <X size={20} />
+        </button>
+        <div>
+          {/* Brand Header */}
+          <div className="sidebar-brand" style={{ marginBottom: '32px', display: 'flex', justifyContent: 'center' }}>
+            <Image
+              src="/cyberwhite.png"
+              alt="CyberPurview"
             width={160}
             height={45}
             style={{ objectFit: 'contain' }}
@@ -95,5 +105,6 @@ export default function Sidebar({ profile, user, activeTab, setActiveTab, handle
         Sign Out
       </button>
     </aside>
+  </>
   );
 }

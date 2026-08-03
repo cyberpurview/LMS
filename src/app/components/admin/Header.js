@@ -1,16 +1,26 @@
 'use client';
 
-import { Search, Bell, Moon } from 'lucide-react';
+import { Search, Bell, Moon, Menu } from 'lucide-react';
 
-export default function Header({ title, username }) {
+export default function Header({ title, username, onMenuClick }) {
   return (
     <header className="header-container">
       {/* Title & Welcome */}
-      <div className="header-welcome">
-        <h1>Welcome {username?.split(' ')[0] || 'Admin'} !</h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
-          Here is your CyberPurview {title} panel.
-        </p>
+      <div className="header-welcome" style={{ display: 'flex', alignItems: 'center' }}>
+        <button 
+          className="menu-btn header-icon-btn" 
+          onClick={onMenuClick} 
+          type="button"
+          style={{ display: 'none', marginRight: '16px', padding: '8px', border: 'none', background: 'none', color: 'var(--text-primary)', cursor: 'pointer' }}
+        >
+          <Menu size={20} />
+        </button>
+        <div>
+          <h1>Welcome {username?.split(' ')[0] || 'Admin'} !</h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+            Here is your CyberPurview {title} panel.
+          </p>
+        </div>
       </div>
 
       {/* Header controls: Search, Notification, Dark mode */}

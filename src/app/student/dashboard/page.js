@@ -23,6 +23,7 @@ export default function StudentDashboard() {
   const [activeTab, setActiveTab] = useState('quizzes');
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   // Settings states (Change Password)
   const [newPassword, setNewPassword] = useState('');
@@ -138,6 +139,8 @@ export default function StudentDashboard() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         handleLogout={handleLogout}
+        isOpen={mobileSidebarOpen}
+        onClose={() => setMobileSidebarOpen(false)}
       />
 
       {/* Main Panel Content (Light Theme blue-grey background matching reference design) */}
@@ -145,6 +148,7 @@ export default function StudentDashboard() {
         <Header 
           title={getTabTitle()}
           username={profile?.username}
+          onMenuClick={() => setMobileSidebarOpen(true)}
         />
 
         {/* Tab Module Rendering */}

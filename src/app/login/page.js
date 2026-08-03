@@ -173,7 +173,7 @@ export default function Login() {
               width: '100%',
               padding: '12px',
               borderRadius: '10px',
-              background: loading ? '#93c5fd' : 'linear-gradient(135deg, #1d4ed8, #2563eb)',
+              background: loading ? '#93c5fd' : 'linear-gradient(135deg, #2563eb, #0ea5e9)',
               color: '#ffffff',
               fontWeight: '700',
               fontSize: '0.9rem',

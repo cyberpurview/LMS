@@ -23,6 +23,7 @@ export default function AdminDashboard() {
   const [students, setStudents] = useState([]);
   const [attempts, setAttempts] = useState([]);
   const [loadingData, setLoadingData] = useState(true);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   // Form states
   const [quizTitle, setQuizTitle] = useState('');
@@ -184,6 +185,8 @@ export default function AdminDashboard() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         handleLogout={handleLogout}
+        isOpen={mobileSidebarOpen}
+        onClose={() => setMobileSidebarOpen(false)}
       />
 
       {/* Main Content Component (Light Theme Soft Blue-Grey Matching Reference Design) */}
@@ -191,6 +194,7 @@ export default function AdminDashboard() {
         <Header 
           title={getTabTitle()}
           username={profile?.username}
+          onMenuClick={() => setMobileSidebarOpen(true)}
         />
 
         {/* Tab Modules Routing */}

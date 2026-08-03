@@ -1,6 +1,7 @@
 'use client';
 
-import { ClipboardList, Clock, CheckCircle, RotateCcw } from 'lucide-react';
+import Link from 'next/link';
+import { ClipboardList, Clock, CheckCircle, RotateCcw, Eye } from 'lucide-react';
 
 export default function AttemptsModule({ attempts, onResetAttempt }) {
   const formatDateTime = (dateStr) => {
@@ -99,27 +100,39 @@ export default function AttemptsModule({ attempts, onResetAttempt }) {
                     <td>{formatDateTime(attempt.startedAt)}</td>
                     <td>{formatDateTime(attempt.submittedAt)}</td>
                     <td style={{ textAlign: 'right' }}>
-                      <button 
-                        className="btn btn-outline" 
-                        onClick={() => {
-                          if (window.confirm(`Are you sure you want to allow ${attempt.studentName} to retake ${attempt.quizTitle}? This will permanently delete their current score and answers.`)) {
-                            onResetAttempt(attempt.id);
-                          }
-                        }}
-                        style={{ 
-                          padding: '6px 12px', 
-                          fontSize: '0.75rem', 
-                          borderColor: 'var(--accent)', 
-                          color: 'var(--accent)',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '4px'
-                        }}
-                        type="button"
-                      >
-                        <RotateCcw size={12} />
-                        Allow Retake
-                      </button>
+                      <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', flexWrap: 'wrap' }}>
+                        {attempt.submittedAt && (
+                          <Link
+                            href={`/admin/review/${attempt.id}`}
+                            className="btn btn-outline"
+                            style={{ padding: '6px 12px', fontSize: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--primary)', borderColor: 'var(--primary)' }}
+                          >
+                            <Eye size={12} />
+                            View Review
+                          </Link>
+                        )}
+                        <button 
+                          className="btn btn-outline" 
+                          onClick={() => {
+                            if (window.confirm(`Are you sure you want to allow ${attempt.studentName} to retake ${attempt.quizTitle}? This will permanently delete their current score and answers.`)) {
+                              onResetAttempt(attempt.id);
+                            }
+                          }}
+                          style={{ 
+                            padding: '6px 12px', 
+                            fontSize: '0.75rem', 
+                            borderColor: 'var(--accent)', 
+                            color: 'var(--accent)',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px'
+                          }}
+                          type="button"
+                        >
+                          <RotateCcw size={12} />
+                          Allow Retake
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

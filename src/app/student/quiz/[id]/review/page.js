@@ -2,7 +2,7 @@
 
 import { useState, useEffect, use } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Award, ArrowLeft, CheckCircle, XCircle, Loader2, AlertCircle, Circle, ChevronDown, ChevronUp, Home } from 'lucide-react';
+import { Award, ArrowLeft, CheckCircle, XCircle, Loader2, AlertCircle, Circle, ChevronDown, ChevronUp, Home, Download } from 'lucide-react';
 import Link from 'next/link';
 
 export default function QuizReview({ params: paramsPromise }) {
@@ -85,9 +85,25 @@ export default function QuizReview({ params: paramsPromise }) {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-app)', display: 'flex', flexDirection: 'column' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .review-body { flex-direction: column !important; overflow: visible !important; }
+          .review-sidebar { width: 100% !important; border-right: none !important; border-bottom: 1px solid var(--border-color); }
+          .review-main { padding: 20px 16px !important; overflow: visible !important; }
+        }
+        @media print {
+          .no-print { display: none !important; }
+          body { background: white !important; }
+          .review-body { flex-direction: column !important; overflow: visible !important; }
+          .review-sidebar { width: 100% !important; border-right: none !important; border-bottom: 2px solid #e2e8f0 !important; }
+          .review-main { overflow: visible !important; padding: 24px !important; }
+          .content-card { box-shadow: none !important; border: 1px solid #e2e8f0 !important; break-inside: avoid; }
+          @page { margin: 16mm; size: A4; }
+        }
+      `}</style>
 
       {/* ── Top Bar ── */}
-      <header style={{
+      <header className="no-print" style={{
         height: '60px', background: '#ffffff', borderBottom: '1px solid var(--border-color)',
         padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         position: 'sticky', top: 0, zIndex: 10, flexShrink: 0
@@ -97,16 +113,21 @@ export default function QuizReview({ params: paramsPromise }) {
           <span style={{ width: '1px', height: '22px', background: 'var(--border-color)' }} />
           <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Exam Review</span>
         </div>
-        <Link href="/student/dashboard" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '0.85rem' }}>
-          <Home size={14} /> Dashboard
-        </Link>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button onClick={() => window.print()} className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }} type="button">
+            <Download size={14} /> Download PDF
+          </button>
+          <Link href="/student/dashboard" className="btn btn-outline" style={{ padding: '8px 14px', fontSize: '0.85rem' }}>
+            <Home size={14} /> Dashboard
+          </Link>
+        </div>
       </header>
 
       {/* ── Body ── */}
-      <div className="quiz-body-split" style={{ maxWidth: '1200px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
+      <div className="review-body" style={{ display: 'flex', gap: '0', flex: 1, overflow: 'hidden', width: '100%' }}>
 
         {/* ── Left Sidebar: Score Card + Navigator ── */}
-        <aside className="quiz-left-panel" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <aside className="review-sidebar" style={{ width: '300px', flexShrink: 0, borderRight: '1px solid var(--border-color)', padding: '28px 24px', overflowY: 'auto', background: '#ffffff', display: 'flex', flexDirection: 'column', gap: '16px' }}>
 
           {/* Score card */}
           <div className="content-card" style={{ padding: '28px 24px', textAlign: 'center', overflow: 'hidden', position: 'relative' }}>
@@ -184,7 +205,7 @@ export default function QuizReview({ params: paramsPromise }) {
         </aside>
 
         {/* ── Main: Question Breakdown ── */}
-        <main className="quiz-right-panel" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <main className="review-main" style={{ flex: 1, minWidth: 0, overflowY: 'auto', padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: '16px', background: 'var(--bg-app)' }}>
 
           {/* Filter tabs */}
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
