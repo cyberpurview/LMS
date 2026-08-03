@@ -1,0 +1,42 @@
+[
+  {
+    "text": "What is the correct syntax to import a default export from a module in JavaScript?",
+    "optionA": "import { default } from 'module';",
+    "optionB": "import moduleName from 'module';",
+    "optionC": "import * as moduleName from 'module';",
+    "optionD": "const moduleName = require('module');",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which Next.js feature allows pages to be rendered dynamically on-demand?",
+    "optionA": "Static Site Generation (SSG)",
+    "optionB": "Incremental Static Regeneration (ISR)",
+    "optionC": "Server-Side Rendering (SSR)",
+    "optionD": "Prerendering",
+    "correctOption": "C"
+  },
+  {
+    "text": "What is the purpose of Row Level Security (RLS) in Supabase/PostgreSQL?",
+    "optionA": "To encrypt database tables at rest.",
+    "optionB": "To restrict which database rows a user can access based on their identity.",
+    "optionC": "To create automatic read replicas of rows.",
+    "optionD": "To speed up query search performance on rows.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which React Hook is most appropriate for handling state that relies on previous state values?",
+    "optionA": "useRef",
+    "optionB": "useContext",
+    "optionC": "useReducer (or useState with functional updates)",
+    "optionD": "useEffect",
+    "correctOption": "C"
+  },
+  {
+    "text": "In a timed Next.js quiz application, where should the authoritative duration and elapsed time be verified to prevent cheating?",
+    "optionA": "In LocalStorage on the client side.",
+    "optionB": "Inside React component state variables.",
+    "optionC": "Securely on the server side using the database start timestamp.",
+    "optionD": "In a cookie stored in the browser.",
+    "correctOption": "C"
+  }
+]

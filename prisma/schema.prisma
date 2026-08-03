@@ -1,0 +1,87 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Profile {
+  id            String             @id @db.Uuid
+  username      String
+  role          String             // "ADMIN" or "STUDENT"
+  createdAt     DateTime           @default(now()) @map("created_at")
+  registrations QuizRegistration[]
+  attempts      QuizAttempt[]
+
+  @@map("profiles")
+}
+
+model Quiz {
+  id            String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title         String
+  duration      Int                // in seconds
+  createdAt     DateTime           @default(now()) @map("created_at")
+  questions     Question[]
+  registrations QuizRegistration[]
+  attempts      QuizAttempt[]
+
+  @@map("quizzes")
+}
+
+model Question {
+  id            String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  quizId        String             @map("quiz_id") @db.Uuid
+  quiz          Quiz               @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  text          String
+  optionA       String             @map("option_a")
+  optionB       String             @map("option_b")
+  optionC       String             @map("option_c")
+  optionD       String             @map("option_d")
+  correctOption String             @map("correct_option") // "A", "B", "C", "D"
+  answers       QuizAnswer[]
+
+  @@map("questions")
+}
+
+model QuizRegistration {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  user      Profile  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quizId    String   @map("quiz_id") @db.Uuid
+  quiz      Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([userId, quizId])
+  @@map("quiz_registrations")
+}
+
+model QuizAttempt {
+  id             String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId         String       @map("user_id") @db.Uuid
+  user           Profile      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quizId         String       @map("quiz_id") @db.Uuid
+  quiz          Quiz         @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  score          Int?         // Nullable until submitted
+  totalQuestions Int          @map("total_questions")
+  startedAt      DateTime     @default(now()) @map("started_at")
+  submittedAt    DateTime?    @map("submitted_at")
+  answers        QuizAnswer[]
+
+  @@map("quiz_attempts")
+}
+
+model QuizAnswer {
+  id             String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  attemptId      String      @map("attempt_id") @db.Uuid
+  attempt        QuizAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  questionId     String      @map("question_id") @db.Uuid
+  question       Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  selectedOption String?     @map("selected_option") // "A", "B", "C", "D" or null
+  isCorrect      Boolean?    @map("is_correct")
+
+  @@unique([attemptId, questionId])
+  @@map("quiz_answers")
+}

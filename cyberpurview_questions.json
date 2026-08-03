@@ -1,0 +1,1202 @@
+[
+  {
+    "text": "A financial institution is updating its enterprise strategy to expand into digital banking. The IT risk practitioner is asked to ensure that risk management activities align with the organization's strategic objectives. What should the practitioner do FIRST?",
+    "optionA": "Develop a new disaster recovery plan for the digital banking platform.",
+    "optionB": "Identify how IT risks could affect the achievement of business objectives.",
+    "optionC": "Perform vulnerability assessments on all internet-facing applications.",
+    "optionD": "Implement additional security monitoring tools.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following BEST demonstrates effective organizational governance?",
+    "optionA": "Information security policies are approved only by the IT department.",
+    "optionB": "Risk decisions are delegated exclusively to system administrators.",
+    "optionC": "Executive management establishes accountability for risk management across the enterprise.",
+    "optionD": "Internal auditors approve all risk treatment plans.",
+    "correctOption": "C"
+  },
+  {
+    "text": "Senior management has requested an overview of the organization's current IT risk posture. Which document would provide the MOST comprehensive view?",
+    "optionA": "Business Continuity Plan",
+    "optionB": "Disaster Recovery Plan",
+    "optionC": "Risk Profile",
+    "optionD": "Audit Work Program",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following is MOST important when establishing an enterprise risk management (ERM) program?",
+    "optionA": "Purchasing cyber insurance",
+    "optionB": "Defining organizational risk appetite",
+    "optionC": "Implementing penetration testing",
+    "optionD": "Selecting a cloud provider",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization consistently ignores policy violations by senior executives. This is MOST likely to negatively impact:",
+    "optionA": "Business continuity planning",
+    "optionB": "Asset valuation",
+    "optionC": "Organizational culture and ethics",
+    "optionD": "Vendor management",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST describes the purpose of organizational policies?",
+    "optionA": "Replace regulatory requirements",
+    "optionB": "Define mandatory expectations for achieving organizational objectives",
+    "optionC": "Eliminate operational risks",
+    "optionD": "Serve as audit evidence only",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which stakeholder is PRIMARILY responsible for approving enterprise risk appetite?",
+    "optionA": "Chief Information Security Officer",
+    "optionB": "Internal Audit",
+    "optionC": "Board of Directors",
+    "optionD": "Risk Analyst",
+    "correctOption": "C"
+  },
+  {
+    "text": "An organization has experienced multiple system outages due to natural disasters. Which governance activity should receive the HIGHEST priority?",
+    "optionA": "Increasing password complexity",
+    "optionB": "Enhancing Business Continuity and Disaster Recovery capabilities",
+    "optionC": "Deploying endpoint encryption",
+    "optionD": "Conducting source code reviews",
+    "correctOption": "B"
+  },
+  {
+    "text": "A risk practitioner discovers that business units are independently accepting significant IT risks without executive approval. Which governance principle has MOST likely failed?",
+    "optionA": "Asset Management",
+    "optionB": "Segregation of Duties",
+    "optionC": "Risk Ownership and Accountability",
+    "optionD": "Incident Management",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST supports alignment between business strategy and IT strategy?",
+    "optionA": "Asset inventory",
+    "optionB": "Enterprise Architecture",
+    "optionC": "Firewall configuration standards",
+    "optionD": "Vulnerability scanning",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following is the PRIMARY purpose of defining organizational roles and responsibilities?",
+    "optionA": "Reduce audit costs",
+    "optionB": "Prevent accountability gaps",
+    "optionC": "Improve software quality",
+    "optionD": "Eliminate all operational risk",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following is MOST likely to increase organizational resilience?",
+    "optionA": "Maintaining only production systems",
+    "optionB": "Establishing tested Business Continuity Plans",
+    "optionC": "Eliminating risk registers",
+    "optionD": "Increasing audit frequency",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization has multiple overlapping security policies that conflict with one another. The GREATEST concern is:",
+    "optionA": "Increased software licensing costs",
+    "optionB": "Reduced compliance and inconsistent implementation",
+    "optionC": "Increased server utilization",
+    "optionD": "Lower audit sampling rates",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following BEST defines risk tolerance?",
+    "optionA": "The maximum acceptable operational loss for individual risks",
+    "optionB": "The total enterprise budget",
+    "optionC": "The value of organizational assets",
+    "optionD": "The likelihood of cyberattacks",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which activity is MOST effective for promoting a strong risk-aware culture?",
+    "optionA": "Purchasing new SIEM software",
+    "optionB": "Conducting regular security and risk awareness training",
+    "optionC": "Increasing vulnerability scans",
+    "optionD": "Hiring additional auditors",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which document defines mandatory organizational requirements while allowing procedures to describe implementation details?",
+    "optionA": "Guidelines",
+    "optionB": "Standards",
+    "optionC": "Policies",
+    "optionD": "Checklists",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST represents the \"Three Lines of Defense\" model?",
+    "optionA": "Security Operations, Development, Procurement",
+    "optionB": "Business Management, Risk/Compliance Functions, Internal Audit",
+    "optionC": "Firewall, IDS, Antivirus",
+    "optionD": "Board, Customers, Vendors",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which governance principle requires business managers\u2014not IT\u2014to ultimately own business risk?",
+    "optionA": "Defense in Depth",
+    "optionB": "Risk Ownership",
+    "optionC": "Least Privilege",
+    "optionD": "Data Classification",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following BEST supports effective asset management?",
+    "optionA": "Annual penetration testing",
+    "optionB": "Maintaining an accurate asset inventory",
+    "optionC": "Encrypting all databases",
+    "optionD": "Conducting phishing exercises",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization has identified several new regulatory requirements affecting customer data. What should occur FIRST?",
+    "optionA": "Purchase new security tools",
+    "optionB": "Update governance policies to address regulatory obligations",
+    "optionC": "Increase network bandwidth",
+    "optionD": "Hire additional developers",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which factor MOST influences an organization's risk appetite?",
+    "optionA": "Operating system version",
+    "optionB": "Business objectives and stakeholder expectations",
+    "optionC": "Number of applications",
+    "optionD": "Internet bandwidth",
+    "correctOption": "B"
+  },
+  {
+    "text": "A newly acquired subsidiary follows different security policies than the parent organization. What should be the FIRST governance action?",
+    "optionA": "Replace all IT systems",
+    "optionB": "Align governance policies and standards",
+    "optionC": "Increase vulnerability scans",
+    "optionD": "Remove legacy applications",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following is MOST important when establishing accountability for risk?",
+    "optionA": "Assigning ownership to individuals with authority over the affected business processes",
+    "optionB": "Delegating ownership exclusively to internal auditors",
+    "optionC": "Assigning ownership to external consultants",
+    "optionD": "Rotating ownership monthly",
+    "correctOption": "A"
+  },
+  {
+    "text": "The PRIMARY objective of Enterprise Risk Management (ERM) is to:",
+    "optionA": "Eliminate all business risks.",
+    "optionB": "Ensure every risk is transferred through insurance.",
+    "optionC": "Manage enterprise risks within approved appetite while supporting business objectives.",
+    "optionD": "Replace operational management.",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which governance activity BEST demonstrates due diligence?",
+    "optionA": "Ignoring low-risk findings",
+    "optionB": "Periodically reviewing policies and controls",
+    "optionC": "Outsourcing IT operations",
+    "optionD": "Purchasing additional servers",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization has exceeded its approved risk appetite. What should management do FIRST?",
+    "optionA": "Accept the risk automatically.",
+    "optionB": "Escalate the issue for appropriate risk treatment decisions.",
+    "optionC": "Ignore the variance until the next audit.",
+    "optionD": "Purchase additional hardware.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following BEST defines organizational resilience?",
+    "optionA": "The ability to eliminate cyberattacks.",
+    "optionB": "The ability to continue and recover critical operations during disruptions.",
+    "optionC": "The ability to prevent all system failures.",
+    "optionD": "The ability to outsource IT functions.",
+    "correctOption": "B"
+  },
+  {
+    "text": "The PRIMARY benefit of defining risk appetite before conducting risk assessments is that it:",
+    "optionA": "Eliminates inherent risk.",
+    "optionB": "Provides criteria for evaluating acceptable risk levels.",
+    "optionC": "Removes regulatory obligations.",
+    "optionD": "Guarantees compliance.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which governance document typically translates high-level policies into specific mandatory technical requirements?",
+    "optionA": "Business Case",
+    "optionB": "Standard",
+    "optionC": "Guideline",
+    "optionD": "Procedure Manual",
+    "correctOption": "B"
+  },
+  {
+    "text": "A Chief Risk Officer wants assurance that business units consistently apply enterprise risk governance. Which activity would provide the MOST reliable assurance?",
+    "optionA": "Self-assessments only",
+    "optionB": "Independent internal audit reviews",
+    "optionC": "Annual employee surveys",
+    "optionD": "Informal management meetings",
+    "correctOption": "B"
+  },
+  {
+    "text": "A global manufacturing company plans to expand into three new countries over the next 18 months. The board has asked the Chief Risk Officer (CRO) to ensure IT risk management supports this strategic initiative. What should the risk practitioner do FIRST?",
+    "optionA": "Identify how the expansion changes the organization's IT risk profile and its impact on business objectives.",
+    "optionB": "Conduct penetration testing on all production systems.",
+    "optionC": "Update disaster recovery procedures for every regional office.",
+    "optionD": "Require every business unit to perform annual security awareness training.",
+    "correctOption": "A"
+  },
+  {
+    "text": "During an enterprise governance review, management discovers several business units independently accepting significant technology risks without executive approval. Which governance weakness MOST likely exists?",
+    "optionA": "Inadequate vulnerability management",
+    "optionB": "Undefined risk ownership and accountability",
+    "optionC": "Poor network segmentation",
+    "optionD": "Weak incident response procedures",
+    "correctOption": "B"
+  },
+  {
+    "text": "A financial institution is revising its enterprise risk management (ERM) framework. Which activity provides the STRONGEST foundation for consistent risk-based decision making?",
+    "optionA": "Increasing the number of internal audits",
+    "optionB": "Deploying continuous monitoring tools",
+    "optionC": "Defining enterprise risk appetite and risk tolerance",
+    "optionD": "Performing quarterly penetration tests",
+    "correctOption": "C"
+  },
+  {
+    "text": "The board has requested assurance that IT investments continue to support long-term organizational objectives. Which governance process BEST addresses this concern?",
+    "optionA": "Business Continuity Planning",
+    "optionB": "Asset Lifecycle Management",
+    "optionC": "Security Awareness Training",
+    "optionD": "Enterprise Architecture governance",
+    "correctOption": "D"
+  },
+  {
+    "text": "An organization has recently acquired another company. Both organizations maintain different security policies covering password management, vendor risk, and cloud security. What should be the FIRST governance activity?",
+    "optionA": "Replace all inherited systems.",
+    "optionB": "Harmonize governance policies and standards across the enterprise.",
+    "optionC": "Perform annual security awareness training.",
+    "optionD": "Increase vulnerability scanning frequency.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which stakeholder is ULTIMATELY responsible for establishing enterprise risk appetite?",
+    "optionA": "Chief Information Security Officer",
+    "optionB": "Chief Risk Officer",
+    "optionC": "Board of Directors",
+    "optionD": "Internal Audit Director",
+    "correctOption": "C"
+  },
+  {
+    "text": "A risk practitioner observes that several project managers are accepting cybersecurity risks solely to meet aggressive implementation deadlines. Which governance principle is MOST at risk?",
+    "optionA": "Business resilience",
+    "optionB": "Accountability",
+    "optionC": "Asset management",
+    "optionD": "Organizational culture and ethics",
+    "correctOption": "D"
+  },
+  {
+    "text": "An organization is establishing its Three Lines Model. Which function provides independent assurance that governance and risk management processes are operating effectively?",
+    "optionA": "Internal Audit",
+    "optionB": "Enterprise Risk Management Office",
+    "optionC": "Business Process Owners",
+    "optionD": "Security Operations Center",
+    "correctOption": "A"
+  },
+  {
+    "text": "During a governance review, management requests a single view showing the organization's most significant technology risks, current exposure levels, and overall trends. Which artifact BEST satisfies this request?",
+    "optionA": "Risk Register",
+    "optionB": "Business Impact Analysis",
+    "optionC": "Enterprise Risk Profile",
+    "optionD": "Disaster Recovery Plan",
+    "correctOption": "C"
+  },
+  {
+    "text": "A ransomware group begins actively exploiting a newly disclosed vulnerability affecting the organization's externally facing VPN appliances. Before recommending mitigation, what should the risk practitioner do FIRST?",
+    "optionA": "Calculate the organization's cyber insurance coverage.",
+    "optionB": "Evaluate the likelihood and business impact of exploitation.",
+    "optionC": "Notify Internal Audit.",
+    "optionD": "Accept the risk because patches are not yet available.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which statement BEST distinguishes a threat from a vulnerability?",
+    "optionA": "A threat is a weakness, while a vulnerability is an attacker.",
+    "optionB": "A vulnerability exists only after an incident occurs.",
+    "optionC": "A threat has the potential to exploit a vulnerability and cause harm.",
+    "optionD": "Threats and vulnerabilities are interchangeable terms.",
+    "correctOption": "C"
+  },
+  {
+    "text": "A healthcare organization identifies an unpatched server hosting electronic medical records. Which factor MOST directly affects the likelihood portion of the risk assessment?",
+    "optionA": "Annual revenue generated by the hospital.",
+    "optionB": "Probability that the vulnerability will be successfully exploited.",
+    "optionC": "Cost of replacing the affected server.",
+    "optionD": "Number of IT staff assigned to the system.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which activity MOST effectively validates assumptions made during development of ransomware risk scenarios?",
+    "optionA": "Conducting a tabletop exercise involving executive management and operational teams.",
+    "optionB": "Reviewing annual financial statements.",
+    "optionC": "Increasing penetration testing frequency.",
+    "optionD": "Updating the organizational chart.",
+    "correctOption": "A"
+  },
+  {
+    "text": "A Business Impact Analysis identifies that payroll processing must be restored within six hours of an outage. Which value has been established?",
+    "optionA": "Recovery Point Objective (RPO)",
+    "optionB": "Maximum Tolerable Downtime (MTD)",
+    "optionC": "Recovery Time Objective (RTO)",
+    "optionD": "Service Level Agreement (SLA)",
+    "correctOption": "C"
+  },
+  {
+    "text": "A retail organization is conducting its annual IT risk assessment. The risk practitioner notices that several previously identified risks no longer exist because the associated systems have been decommissioned. What should the practitioner do FIRST?",
+    "optionA": "Archive the obsolete risks and update the risk register.",
+    "optionB": "Transfer ownership of the risks to Internal Audit.",
+    "optionC": "Continue monitoring the obsolete risks until the next assessment.",
+    "optionD": "Increase the likelihood rating for similar risks.",
+    "correctOption": "A"
+  },
+  {
+    "text": "A risk practitioner is developing a risk scenario for unauthorized access to a cloud-based payroll system. Which component should be identified FIRST?",
+    "optionA": "Existing preventive controls",
+    "optionB": "The threat event and affected business process",
+    "optionC": "Residual risk rating",
+    "optionD": "Recommended mitigation strategy",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization has recently implemented multifactor authentication (MFA) for all privileged accounts. Which type of risk is MOST directly reduced?",
+    "optionA": "Inherent risk",
+    "optionB": "Strategic risk",
+    "optionC": "Residual risk",
+    "optionD": "Regulatory risk",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following provides the MOST reliable basis for estimating the business impact of a prolonged system outage?",
+    "optionA": "Penetration test results",
+    "optionB": "Business Impact Analysis (BIA)",
+    "optionC": "Vulnerability scan reports",
+    "optionD": "Security awareness metrics",
+    "correctOption": "B"
+  },
+  {
+    "text": "A newly published vulnerability affects a critical internet-facing application, but no exploits have been observed. What should the risk practitioner do NEXT?",
+    "optionA": "Immediately classify the risk as critical without analysis.",
+    "optionB": "Evaluate the likelihood of exploitation using available threat intelligence.",
+    "optionC": "Close the vulnerability because there is no active exploit.",
+    "optionD": "Remove the application from the asset inventory.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which document should be updated after a new risk has been analyzed and assigned an owner?",
+    "optionA": "Disaster Recovery Plan",
+    "optionB": "Enterprise Architecture Diagram",
+    "optionC": "Risk Register",
+    "optionD": "Software Development Plan",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST represents a vulnerability?",
+    "optionA": "A ransomware gang targeting financial institutions",
+    "optionB": "An unpatched operating system with a known software flaw",
+    "optionC": "A loss exceeding the organization's risk appetite",
+    "optionD": "A security awareness campaign",
+    "correctOption": "B"
+  },
+  {
+    "text": "A risk practitioner estimates that a cyberattack could occur once every five years with an expected financial loss of $2 million. Which type of analysis is being performed?",
+    "optionA": "Qualitative risk analysis",
+    "optionB": "Threat modeling",
+    "optionC": "Quantitative risk analysis",
+    "optionD": "Root cause analysis",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which factor should receive the GREATEST consideration when prioritizing remediation activities?",
+    "optionA": "The age of the vulnerability",
+    "optionB": "The combination of business impact and likelihood",
+    "optionC": "The number of audit findings",
+    "optionD": "The purchase price of the affected asset",
+    "correctOption": "B"
+  },
+  {
+    "text": "A Key Risk Indicator (KRI) consistently exceeds its defined threshold. What is the MOST appropriate action?",
+    "optionA": "Escalate the increased risk exposure to management for review.",
+    "optionB": "Lower the KRI threshold.",
+    "optionC": "Remove the KRI from reporting.",
+    "optionD": "Wait until the next annual assessment.",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which statement BEST describes inherent risk?",
+    "optionA": "The risk remaining after controls have been implemented.",
+    "optionB": "The level of risk accepted by management.",
+    "optionC": "The level of risk before considering existing controls.",
+    "optionD": "The risk transferred to a third party.",
+    "correctOption": "C"
+  },
+  {
+    "text": "An organization uses qualitative ratings of High, Medium, and Low to evaluate risk. What is the PRIMARY advantage of this approach?",
+    "optionA": "It eliminates subjectivity.",
+    "optionB": "It requires extensive financial data.",
+    "optionC": "It is easier to apply when numerical data is limited.",
+    "optionD": "It produces more accurate financial loss estimates.",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following is MOST useful for identifying emerging cyber threats?",
+    "optionA": "Threat intelligence feeds and industry information-sharing groups",
+    "optionB": "Payroll reconciliation reports",
+    "optionC": "Annual financial audits",
+    "optionD": "Hardware depreciation schedules",
+    "correctOption": "A"
+  },
+  {
+    "text": "A business owner believes a newly identified IT risk should be accepted because the impact is minimal. What should the risk practitioner verify FIRST?",
+    "optionA": "Whether the decision aligns with the organization's approved risk appetite and tolerance",
+    "optionB": "Whether the vulnerability scanner detected the issue",
+    "optionC": "Whether Internal Audit agrees with the decision",
+    "optionD": "Whether cyber insurance covers the risk",
+    "correctOption": "A"
+  },
+  {
+    "text": "During a risk assessment, several business units identify nearly identical risks. What is the BEST approach?",
+    "optionA": "Keep each risk separate indefinitely.",
+    "optionB": "Aggregate related risks into the enterprise risk profile while maintaining appropriate ownership.",
+    "optionC": "Delete duplicate risks immediately.",
+    "optionD": "Transfer all risks to the ERM office.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A risk practitioner is asked to assess a new artificial intelligence (AI) solution before deployment. Which activity should be performed FIRST?",
+    "optionA": "Purchase cyber insurance for the AI platform.",
+    "optionB": "Develop a disaster recovery plan.",
+    "optionC": "Identify potential AI-related threats, vulnerabilities, and business impacts.",
+    "optionD": "Conduct an external compliance audit.",
+    "correctOption": "C"
+  },
+  {
+    "text": "A multinational organization is conducting an enterprise-wide risk assessment. During interviews, several business units report similar risks but assign different impact ratings. What should the risk practitioner do FIRST?",
+    "optionA": "Average all impact ratings across business units.",
+    "optionB": "Use the highest impact rating for every risk.",
+    "optionC": "Validate the organization's risk assessment criteria to ensure consistent evaluation.",
+    "optionD": "Ask Internal Audit to determine the final ratings.",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following provides the BEST input when estimating the likelihood of a phishing attack succeeding?",
+    "optionA": "Historical phishing incidents, user awareness results, and threat intelligence",
+    "optionB": "Annual IT operating budget",
+    "optionC": "Number of servers in production",
+    "optionD": "Asset depreciation schedule",
+    "correctOption": "A"
+  },
+  {
+    "text": "A vulnerability scan identifies hundreds of vulnerabilities across the enterprise. Which should the risk practitioner prioritize FIRST?",
+    "optionA": "Vulnerabilities affecting development systems only",
+    "optionB": "Vulnerabilities with the highest CVSS score regardless of business context",
+    "optionC": "Vulnerabilities affecting critical business assets with high likelihood of exploitation",
+    "optionD": "The oldest vulnerabilities regardless of severity",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST distinguishes a risk event from a risk scenario?",
+    "optionA": "A risk event describes potential future conditions, while a risk scenario describes actual incidents.",
+    "optionB": "A risk scenario explains how threats exploit vulnerabilities to create a business impact, whereas a risk event is the actual occurrence.",
+    "optionC": "They are synonymous terms.",
+    "optionD": "A risk event only applies to cybersecurity incidents.",
+    "correctOption": "B"
+  },
+  {
+    "text": "During a Business Impact Analysis (BIA), which information is MOST critical for determining recovery priorities?",
+    "optionA": "Software licensing costs",
+    "optionB": "Asset purchase dates",
+    "optionC": "Maximum acceptable business downtime for critical processes",
+    "optionD": "Number of IT support staff",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following is the PRIMARY objective of maintaining an enterprise risk register?",
+    "optionA": "Document and monitor identified risks throughout their lifecycle",
+    "optionB": "Replace vulnerability management reports",
+    "optionC": "Track software licenses",
+    "optionD": "Maintain the organization's asset inventory",
+    "correctOption": "A"
+  },
+  {
+    "text": "A risk practitioner determines that a vulnerability has a low probability of exploitation but an extremely high business impact if exploited. Which risk characteristic should receive the MOST attention?",
+    "optionA": "Likelihood only",
+    "optionB": "Business impact",
+    "optionC": "Number of affected assets",
+    "optionD": "Cost of remediation",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which technique BEST helps identify potential attack paths before a new application is deployed?",
+    "optionA": "Business Impact Analysis",
+    "optionB": "Root Cause Analysis",
+    "optionC": "Threat Modeling",
+    "optionD": "Risk Acceptance Review",
+    "correctOption": "C"
+  },
+  {
+    "text": "A risk practitioner observes an increase in failed privileged login attempts across multiple production systems. This information is BEST classified as:",
+    "optionA": "A Key Risk Indicator (KRI)",
+    "optionB": "A Key Performance Indicator (KPI)",
+    "optionC": "A Key Control Indicator (KCI)",
+    "optionD": "A Recovery Time Objective (RTO)",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which of the following is MOST important when assigning a risk owner?",
+    "optionA": "The individual should have technical expertise only.",
+    "optionB": "The individual should have authority to manage and accept the business risk.",
+    "optionC": "The individual should be an internal auditor.",
+    "optionD": "The individual should be independent of the business process.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A financial institution is evaluating a new online payment platform. Which activity should be performed BEFORE calculating residual risk?",
+    "optionA": "Implement additional detective controls.",
+    "optionB": "Determine the effectiveness of existing controls.",
+    "optionC": "Obtain Board approval.",
+    "optionD": "Purchase cyber insurance.",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization is introducing generative AI into its customer support operations. During the risk assessment, the risk practitioner identifies concerns related to data privacy, model bias, and unauthorized disclosure of confidential information. What should the practitioner do NEXT?",
+    "optionA": "Approve deployment because the business benefits outweigh the concerns.",
+    "optionB": "Delay the assessment until the technology matures.",
+    "optionC": "Remove the AI functionality from the project scope.",
+    "optionD": "Develop and evaluate AI-specific risk scenarios to determine appropriate treatment options.",
+    "correctOption": "D"
+  },
+  {
+    "text": "A financial institution identifies a critical vulnerability in its online banking application. The estimated cost of implementing a permanent fix is significantly less than the potential financial and reputational damage of a successful breach. Which risk response option is MOST appropriate?",
+    "optionA": "Transfer the risk through cyber insurance.",
+    "optionB": "Accept the risk because no exploit has occurred.",
+    "optionC": "Mitigate the risk by implementing the corrective control.",
+    "optionD": "Avoid the risk by discontinuing online banking.",
+    "correctOption": "C"
+  },
+  {
+    "text": "A business owner requests approval to continue operating an unsupported legacy application because replacing it would delay a strategic initiative. What should the risk practitioner do FIRST?",
+    "optionA": "Document and assess the associated risk before recommending an exception.",
+    "optionB": "Immediately deny the request.",
+    "optionC": "Require Internal Audit to approve the exception.",
+    "optionD": "Remove the application from production.",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which stakeholder is PRIMARILY responsible for ensuring an assigned security control continues to operate effectively?",
+    "optionA": "Risk Owner",
+    "optionB": "Internal Auditor",
+    "optionC": "Control Owner",
+    "optionD": "Chief Executive Officer",
+    "correctOption": "C"
+  },
+  {
+    "text": "A third-party service provider stores confidential customer information. During due diligence, the provider cannot demonstrate compliance with contractual security requirements. What should the organization do NEXT?",
+    "optionA": "Terminate negotiations immediately.",
+    "optionB": "Ignore the deficiency because the vendor is well known.",
+    "optionC": "Accept the risk without documentation.",
+    "optionD": "Evaluate the vendor risk and determine whether additional controls or alternative providers are necessary.",
+    "correctOption": "D"
+  },
+  {
+    "text": "Which of the following BEST represents a corrective control?",
+    "optionA": "Daily log monitoring",
+    "optionB": "Restoring systems from backup after a ransomware attack",
+    "optionC": "Multifactor authentication",
+    "optionD": "Security awareness training",
+    "correctOption": "B"
+  },
+  {
+    "text": "A risk treatment plan has been approved. Which activity should the risk practitioner perform NEXT?",
+    "optionA": "Validate that assigned owners implement the agreed treatment actions.",
+    "optionB": "Close the risk immediately.",
+    "optionC": "Transfer ownership to Internal Audit.",
+    "optionD": "Remove the risk from the enterprise risk profile.",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which control type is designed primarily to discourage undesirable behavior by informing individuals of expected conduct?",
+    "optionA": "Preventive Control",
+    "optionB": "Directive Control",
+    "optionC": "Detective Control",
+    "optionD": "Corrective Control",
+    "correctOption": "B"
+  },
+  {
+    "text": "A Key Risk Indicator (KRI) has exceeded its threshold for three consecutive months despite completed mitigation activities. What should management do FIRST?",
+    "optionA": "Lower the KRI threshold.",
+    "optionB": "Remove the KRI from reporting.",
+    "optionC": "Reassess the effectiveness of the implemented risk response.",
+    "optionD": "Accept the increased exposure permanently.",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST describes risk transfer?",
+    "optionA": "Eliminating the activity creating the risk",
+    "optionB": "Purchasing cyber insurance to offset financial loss",
+    "optionC": "Installing additional preventive controls",
+    "optionD": "Accepting the remaining exposure",
+    "correctOption": "B"
+  },
+  {
+    "text": "A control assessment identifies that privileged access reviews have not been performed for six months. What should be recorded FIRST?",
+    "optionA": "An issue requiring remediation and assignment to the appropriate owner",
+    "optionB": "A completed corrective action",
+    "optionC": "A closed audit finding",
+    "optionD": "A disaster recovery exception",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which of the following is the MOST effective preventive control against unauthorized privileged access?",
+    "optionA": "Security Information and Event Management (SIEM)",
+    "optionB": "Quarterly vulnerability scanning",
+    "optionC": "Multifactor authentication (MFA)",
+    "optionD": "Daily log review",
+    "correctOption": "C"
+  },
+  {
+    "text": "An organization decides to discontinue offering a high-risk online service because regulatory compliance costs outweigh the business value. Which risk response strategy is being applied?",
+    "optionA": "Accept",
+    "optionB": "Transfer",
+    "optionC": "Mitigate",
+    "optionD": "Avoid",
+    "correctOption": "D"
+  },
+  {
+    "text": "A vendor experiences a data breach involving your organization's customer information. According to good risk management practice, who remains ultimately accountable for protecting the organization's data?",
+    "optionA": "The cloud provider",
+    "optionB": "The organization's management",
+    "optionC": "External auditors",
+    "optionD": "The software developer",
+    "correctOption": "B"
+  },
+  {
+    "text": "A control owner proposes replacing a manual review with an automated monitoring solution. Before implementation, what should be evaluated FIRST?",
+    "optionA": "Whether the new control adequately addresses the identified risk",
+    "optionB": "The vendor's marketing materials",
+    "optionC": "The annual audit schedule",
+    "optionD": "The depreciation schedule of existing hardware",
+    "correctOption": "A"
+  },
+  {
+    "text": "A project manager requests a temporary exception to the secure coding standard because of a production deadline. Which action is MOST appropriate?",
+    "optionA": "Approve the request immediately.",
+    "optionB": "Deny all requests involving security.",
+    "optionC": "Conduct a documented risk assessment and obtain appropriate approval.",
+    "optionD": "Allow developers to decide individually.",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST demonstrates effective issue management?",
+    "optionA": "Closing issues immediately after identification",
+    "optionB": "Tracking remediation progress until verification and closure",
+    "optionC": "Delegating all remediation to Internal Audit",
+    "optionD": "Removing recurring issues from reports",
+    "correctOption": "B"
+  },
+  {
+    "text": "Executive management requests a quarterly risk report. Which information is MOST valuable for strategic decision-making?",
+    "optionA": "Individual firewall log entries",
+    "optionB": "Detailed packet captures",
+    "optionC": "Daily antivirus signature updates",
+    "optionD": "Enterprise risk trends, KRIs, and treatment status",
+    "correctOption": "D"
+  },
+  {
+    "text": "Which activity BEST confirms that a risk response has achieved its intended objective?",
+    "optionA": "Performing a follow-up assessment to validate the effectiveness of implemented controls",
+    "optionB": "Closing the risk after implementation",
+    "optionC": "Conducting another Business Impact Analysis",
+    "optionD": "Updating the organizational chart",
+    "correctOption": "A"
+  },
+  {
+    "text": "A risk practitioner discovers that several high-risk findings remain open six months after their agreed remediation dates. What should the practitioner do FIRST?",
+    "optionA": "Close the findings because compensating controls may exist.",
+    "optionB": "Escalate the overdue findings to the appropriate governance authority.",
+    "optionC": "Reduce the risk ratings to align with current reporting.",
+    "optionD": "Transfer ownership to Internal Audit.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Following implementation of a new privileged access management (PAM) solution, management wants assurance that privileged access risks have been reduced. Which activity provides the BEST assurance?",
+    "optionA": "Review vendor implementation documentation.",
+    "optionB": "Conduct a control effectiveness assessment of the PAM solution.",
+    "optionC": "Compare the project budget to actual costs.",
+    "optionD": "Verify that all administrators completed training.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A healthcare organization decides to purchase cyber insurance to reduce the financial impact of potential ransomware attacks. Which risk response strategy is being applied?",
+    "optionA": "Avoid",
+    "optionB": "Mitigate",
+    "optionC": "Transfer",
+    "optionD": "Accept",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following is the PRIMARY purpose of assigning a target remediation date to an identified issue?",
+    "optionA": "To satisfy internal audit requirements only",
+    "optionB": "To establish accountability and timely resolution",
+    "optionC": "To eliminate residual risk automatically",
+    "optionD": "To reduce project costs",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization has implemented detective controls to identify unauthorized database activity. Which control would BEST complement these detective controls?",
+    "optionA": "Database activity monitoring",
+    "optionB": "Multi-factor authentication for database administrators",
+    "optionC": "Daily audit log review",
+    "optionD": "Security incident reporting",
+    "correctOption": "B"
+  },
+  {
+    "text": "A third-party vendor processes payment card information for an organization. Which activity should occur on a periodic basis after the contract is signed?",
+    "optionA": "Annual reassessment of vendor security and compliance posture",
+    "optionB": "Renegotiation of pricing",
+    "optionC": "Replacement of vendor management software",
+    "optionD": "Internal audit ownership of vendor operations",
+    "correctOption": "A"
+  },
+  {
+    "text": "A control owner proposes replacing manual user access reviews with an automated identity governance solution. What should be evaluated FIRST?",
+    "optionA": "The vendor's implementation timeline",
+    "optionB": "Whether the automated control adequately addresses the identified risk",
+    "optionC": "The organization's annual IT budget",
+    "optionD": "The number of privileged users",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following is the BEST example of a compensating control?",
+    "optionA": "Deploying endpoint detection after disabling antivirus",
+    "optionB": "Implementing enhanced network monitoring because system encryption cannot yet be deployed",
+    "optionC": "Conducting annual awareness training",
+    "optionD": "Purchasing cyber insurance",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which control testing approach BEST determines whether an automated access control consistently enforces segregation of duties?",
+    "optionA": "Inquiry of system administrators only",
+    "optionB": "Observation of a single transaction",
+    "optionC": "Inspection and reperformance using representative samples",
+    "optionD": "Review of the organization's organizational chart",
+    "correctOption": "C"
+  },
+  {
+    "text": "During an assessment, management requests an exception allowing shared administrative accounts for emergency situations. What is the MOST important consideration?",
+    "optionA": "Whether the exception has documented business justification, compensating controls, and formal approval",
+    "optionB": "Whether the accounts reduce licensing costs",
+    "optionC": "Whether administrators prefer shared accounts",
+    "optionD": "Whether the system vendor recommends the practice",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which of the following BEST demonstrates effective risk communication to executive management?",
+    "optionA": "Providing detailed firewall configuration files",
+    "optionB": "Presenting enterprise risk trends, KRIs, business impacts, and treatment status",
+    "optionC": "Distributing vulnerability scanner output without analysis",
+    "optionD": "Reporting raw SIEM logs",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization has accepted a medium-level risk because the cost of mitigation exceeds the expected business impact. What should occur NEXT?",
+    "optionA": "Remove the risk from all documentation",
+    "optionB": "Continue monitoring the accepted risk",
+    "optionC": "Close the risk permanently",
+    "optionD": "Eliminate all associated controls",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which metric BEST indicates whether implemented controls continue to achieve their intended purpose?",
+    "optionA": "Key Performance Indicator (KPI)",
+    "optionB": "Return on Investment (ROI)",
+    "optionC": "Key Control Indicator (KCI)",
+    "optionD": "Recovery Time Objective (RTO)",
+    "correctOption": "C"
+  },
+  {
+    "text": "A risk practitioner identifies several related findings across multiple business units that have the same root cause. What is the BEST recommendation?",
+    "optionA": "Track each finding independently without coordination.",
+    "optionB": "Aggregate the findings and address the common root cause.",
+    "optionC": "Close duplicate findings immediately.",
+    "optionD": "Lower the severity ratings.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A cloud service provider refuses to provide evidence of its annual independent security assessment. What should the organization do FIRST?",
+    "optionA": "Immediately terminate the contract.",
+    "optionB": "Evaluate the resulting vendor risk and determine whether it remains acceptable.",
+    "optionC": "Ignore the issue because the provider is well known.",
+    "optionD": "Transfer responsibility to Internal Audit.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following is MOST important when validating completion of a risk treatment plan?",
+    "optionA": "Confirming that planned actions have reduced risk to an acceptable level",
+    "optionB": "Verifying the project remained within budget",
+    "optionC": "Ensuring all project documentation has been archived",
+    "optionD": "Confirming vendor invoices have been paid",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which reporting approach is MOST effective for the Board of Directors?",
+    "optionA": "Detailed vulnerability scan results organized by IP address",
+    "optionB": "Technical penetration testing output",
+    "optionC": "Enterprise-level dashboards showing risk exposure, trends, KRIs, and strategic impacts",
+    "optionD": "Raw security event logs",
+    "correctOption": "C"
+  },
+  {
+    "text": "An organization implements a new control to reduce insider threat risk. Six months later, incidents continue at the same frequency. What should the risk practitioner recommend?",
+    "optionA": "Accept the existing control because implementation is complete.",
+    "optionB": "Eliminate all monitoring activities.",
+    "optionC": "Perform a control effectiveness review and redesign the control if necessary.",
+    "optionD": "Transfer all insider threat risk to Human Resources.",
+    "correctOption": "C"
+  },
+  {
+    "text": "A multinational organization has implemented several risk treatment plans over the past year. Senior management wants to determine whether the overall risk exposure has decreased. Which activity should the risk practitioner perform FIRST?",
+    "optionA": "Conduct an enterprise risk aggregation and trend analysis.",
+    "optionB": "Increase the frequency of penetration testing.",
+    "optionC": "Perform a Business Impact Analysis (BIA).",
+    "optionD": "Review the organization's change management process.",
+    "correctOption": "A"
+  },
+  {
+    "text": "A business unit manager refuses to implement an approved security control because it may reduce employee productivity. What is the MOST appropriate action?",
+    "optionA": "Remove the control from the implementation plan.",
+    "optionB": "Escalate the issue to the appropriate governance authority for a risk-based decision.",
+    "optionC": "Require Internal Audit to implement the control.",
+    "optionD": "Accept the manager's decision without documentation.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following BEST demonstrates that a control has achieved its intended objective?",
+    "optionA": "The control has been documented in organizational policies.",
+    "optionB": "The control has operated effectively and reduced risk to an acceptable level.",
+    "optionC": "Employees completed awareness training.",
+    "optionD": "The control passed vendor acceptance testing.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A risk practitioner identifies multiple business units implementing different controls to address the same enterprise risk. What should the practitioner recommend?",
+    "optionA": "Eliminate all local controls.",
+    "optionB": "Standardize the control strategy while allowing justified business-specific exceptions.",
+    "optionC": "Allow every business unit complete autonomy.",
+    "optionD": "Transfer all control ownership to Internal Audit.",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization has accepted a residual risk after implementing several mitigating controls. Under which condition should the accepted risk be reassessed?",
+    "optionA": "Only during the annual audit.",
+    "optionB": "Only after a security incident.",
+    "optionC": "Whenever significant changes occur to the business, technology, or threat environment.",
+    "optionD": "Accepted risks never require reassessment.",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST supports continuous improvement of the control environment?",
+    "optionA": "Conducting periodic control assessments and incorporating lessons learned.",
+    "optionB": "Increasing the number of internal audits each year.",
+    "optionC": "Replacing preventive controls with detective controls.",
+    "optionD": "Reducing management reporting requirements.",
+    "correctOption": "A"
+  },
+  {
+    "text": "A vendor responsible for processing customer information experiences repeated control deficiencies during annual assessments. What is the BEST recommendation?",
+    "optionA": "Ignore the findings because no breach has occurred.",
+    "optionB": "Require corrective action and reassess whether the vendor risk remains acceptable.",
+    "optionC": "Immediately terminate the contract regardless of business impact.",
+    "optionD": "Transfer ownership of the issue to the external auditor.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following provides the STRONGEST evidence that a preventive control is operating effectively?",
+    "optionA": "A documented policy requiring the control.",
+    "optionB": "Successful reperformance demonstrating the control consistently prevents unauthorized activity.",
+    "optionC": "Employee interviews confirming awareness of the control.",
+    "optionD": "Vendor implementation documentation.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A Key Control Indicator (KCI) consistently shows declining control performance over several reporting periods. What should management do FIRST?",
+    "optionA": "Increase the KCI threshold.",
+    "optionB": "Investigate the underlying causes of declining control effectiveness.",
+    "optionC": "Replace the KCI with a KPI.",
+    "optionD": "Suspend reporting until additional data is collected.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following is the BEST indicator that issue management is functioning effectively?",
+    "optionA": "Every finding is closed within 30 days.",
+    "optionB": "High-risk findings are remediated, validated, and closed according to agreed risk treatment plans.",
+    "optionC": "Internal Audit owns every remediation activity.",
+    "optionD": "Risk owners never request extensions.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A risk practitioner is preparing a quarterly report for executive management. Which information should receive the HIGHEST priority?",
+    "optionA": "Detailed firewall rule changes.",
+    "optionB": "Individual vulnerability scan results.",
+    "optionC": "Enterprise risk trends, treatment progress, KRIs, and risks exceeding appetite.",
+    "optionD": "Daily operating system patch reports.",
+    "correctOption": "C"
+  },
+  {
+    "text": "Following implementation of a new enterprise control framework, management requests assurance that the framework remains effective over time. Which activity BEST satisfies this request?",
+    "optionA": "Annual employee satisfaction surveys.",
+    "optionB": "Periodic monitoring, testing, and independent assessment of control effectiveness.",
+    "optionC": "Quarterly software upgrades.",
+    "optionD": "Monthly hardware inventories.",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization is beginning development of a customer-facing web application. During which SDLC phase should security requirements FIRST be incorporated?",
+    "optionA": "Testing",
+    "optionB": "Deployment",
+    "optionC": "Requirements and Design",
+    "optionD": "Maintenance",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which change management activity MOST effectively reduces operational risk?",
+    "optionA": "Performing testing and obtaining formal approval before production implementation.",
+    "optionB": "Deploying emergency changes without documentation.",
+    "optionC": "Allowing developers to approve their own production changes.",
+    "optionD": "Implementing changes immediately after coding.",
+    "correctOption": "A"
+  },
+  {
+    "text": "A DevSecOps team wants to identify vulnerabilities as early as possible in the software development lifecycle. Which practice BEST supports this objective?",
+    "optionA": "Annual penetration testing.",
+    "optionB": "Static Application Security Testing (SAST) integrated into the CI/CD pipeline.",
+    "optionC": "Quarterly disaster recovery testing.",
+    "optionD": "Security awareness training for developers only.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which technology principle BEST supports business agility while maintaining governance?",
+    "optionA": "Ad hoc system development.",
+    "optionB": "Enterprise Architecture aligned with business strategy.",
+    "optionC": "Decentralized technology standards without oversight.",
+    "optionD": "Independent technology purchases by each department.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A risk practitioner is reviewing an organization's backup strategy. Which metric is MOST closely associated with limiting acceptable data loss?",
+    "optionA": "Recovery Time Objective (RTO)",
+    "optionB": "Recovery Point Objective (RPO)",
+    "optionC": "Mean Time Between Failures (MTBF)",
+    "optionD": "Service Level Agreement (SLA)",
+    "correctOption": "B"
+  },
+  {
+    "text": "A project team is migrating critical applications to a public cloud provider. Which activity should be performed FIRST?",
+    "optionA": "Assess cloud-specific risks, security controls, and regulatory requirements.",
+    "optionB": "Purchase additional on-premises hardware.",
+    "optionC": "Disable encryption to improve performance.",
+    "optionD": "Implement disaster recovery after migration.",
+    "correctOption": "A"
+  },
+  {
+    "text": "An organization is implementing a Zero Trust Architecture (ZTA). Which principle is MOST fundamental to Zero Trust?",
+    "optionA": "Trust all internal network traffic by default.",
+    "optionB": "Verify explicitly and continuously, regardless of user or device location.",
+    "optionC": "Allow unrestricted access after initial authentication.",
+    "optionD": "Eliminate multifactor authentication to improve usability.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which data classification practice BEST supports regulatory compliance and information protection?",
+    "optionA": "Classifying data according to its business value and sensitivity",
+    "optionB": "Encrypting only archived information",
+    "optionC": "Storing all information in the same repository",
+    "optionD": "Allowing data owners to classify information informally",
+    "correctOption": "A"
+  },
+  {
+    "text": "A security awareness program is MOST effective when it:",
+    "optionA": "Is delivered only during employee onboarding.",
+    "optionB": "Focuses exclusively on technical employees.",
+    "optionC": "Is continuous, role-based, and reinforced through periodic exercises.",
+    "optionD": "Is conducted only after security incidents occur.",
+    "correctOption": "C"
+  },
+  {
+    "text": "A ransomware attack encrypts multiple production servers. Which objective should guide the organization's disaster recovery activities?",
+    "optionA": "Restore every non-critical system first.",
+    "optionB": "Restore systems according to business priorities identified in the Business Impact Analysis.",
+    "optionC": "Restore systems alphabetically.",
+    "optionD": "Restore the newest systems first.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A software development team uses Agile methodologies. What is the BEST way to integrate risk management into Agile development?",
+    "optionA": "Perform risk assessments only after production deployment.",
+    "optionB": "Incorporate security and risk activities into every sprint.",
+    "optionC": "Delay security reviews until project completion.",
+    "optionD": "Assign all security responsibilities to Internal Audit.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which activity BEST supports secure data disposal?",
+    "optionA": "Compressing files before deletion.",
+    "optionB": "Securely sanitizing or destroying storage media according to organizational policy.",
+    "optionC": "Moving files to another directory.",
+    "optionD": "Renaming confidential files.",
+    "correctOption": "B"
+  },
+  {
+    "text": "A risk practitioner evaluates a proposed Artificial Intelligence (AI) solution used for loan approvals. Which risk requires the GREATEST governance attention?",
+    "optionA": "Increased electricity consumption",
+    "optionB": "Potential model bias leading to unfair business decisions",
+    "optionC": "Reduced software licensing costs",
+    "optionD": "Increased processor utilization",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which of the following BEST supports confidentiality of sensitive customer information?",
+    "optionA": "Encrypting sensitive data at rest and in transit.",
+    "optionB": "Increasing internet bandwidth.",
+    "optionC": "Performing annual hardware upgrades.",
+    "optionD": "Maintaining an updated asset inventory only.",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which project management practice MOST improves risk visibility throughout a technology project?",
+    "optionA": "Reviewing project risks only during project closure.",
+    "optionB": "Maintaining and regularly updating a project risk register.",
+    "optionC": "Eliminating project status meetings.",
+    "optionD": "Assigning all risks to the project sponsor.",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which security principle BEST supports limiting the impact of compromised user credentials?",
+    "optionA": "High Availability",
+    "optionB": "Defense in Depth",
+    "optionC": "Least Privilege",
+    "optionD": "Data Minimization",
+    "correctOption": "C"
+  },
+  {
+    "text": "An organization wants to ensure that critical applications remain available during infrastructure failures. Which technology capability BEST supports this objective?",
+    "optionA": "High Availability (HA) architecture",
+    "optionB": "Daily vulnerability scanning",
+    "optionC": "Password expiration",
+    "optionD": "Security awareness training",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which activity is MOST important before deploying an Internet of Things (IoT) solution into a manufacturing environment?",
+    "optionA": "Evaluate device security, network segmentation, and operational risks.",
+    "optionB": "Purchase additional cloud storage.",
+    "optionC": "Disable device authentication.",
+    "optionD": "Eliminate firmware updates.",
+    "correctOption": "A"
+  },
+  {
+    "text": "A project introduces a new cloud-based Software-as-a-Service (SaaS) application. Which governance activity should occur FIRST?",
+    "optionA": "Perform a cloud security and compliance assessment.",
+    "optionB": "Configure user accounts.",
+    "optionC": "Purchase additional endpoints.",
+    "optionD": "Archive existing application data.",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which metric measures the maximum acceptable amount of time required to restore a business service after disruption?",
+    "optionA": "Recovery Point Objective (RPO)",
+    "optionB": "Mean Time to Detect (MTTD)",
+    "optionC": "Recovery Time Objective (RTO)",
+    "optionD": "Mean Time Between Failures (MTBF)",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which data privacy principle requires organizations to collect only information necessary for a specified business purpose?",
+    "optionA": "Defense in Depth",
+    "optionB": "Data Minimization",
+    "optionC": "Separation of Duties",
+    "optionD": "Fail Secure",
+    "correctOption": "B"
+  },
+  {
+    "text": "An organization implements endpoint detection and response (EDR) across all workstations. Which security objective is PRIMARILY enhanced?",
+    "optionA": "Detection and response to endpoint threats.",
+    "optionB": "Physical security.",
+    "optionC": "Data classification.",
+    "optionD": "Business continuity planning.",
+    "correctOption": "A"
+  },
+  {
+    "text": "Which activity BEST supports secure software development?",
+    "optionA": "Performing code reviews and integrating security testing throughout the SDLC.",
+    "optionB": "Conducting penetration testing only after deployment.",
+    "optionC": "Allowing developers unrestricted production access.",
+    "optionD": "Delaying vulnerability remediation until after release.",
+    "correctOption": "A"
+  },
+  {
+    "text": "A critical business application is hosted in multiple geographic regions. Which resilience objective is MOST likely being addressed?",
+    "optionA": "Confidentiality",
+    "optionB": "Availability",
+    "optionC": "Integrity",
+    "optionD": "Nonrepudiation",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which emerging technology presents the GREATEST governance challenge because of explainability, bias, and regulatory concerns?",
+    "optionA": "Virtualization",
+    "optionB": "Artificial Intelligence (AI)",
+    "optionC": "Network Attached Storage (NAS)",
+    "optionD": "Fibre Channel",
+    "correctOption": "B"
+  },
+  {
+    "text": "Which activity BEST demonstrates alignment between information security and business strategy?",
+    "optionA": "Selecting security initiatives based on enterprise objectives and risk appetite.",
+    "optionB": "Purchasing the latest security technologies regardless of need.",
+    "optionC": "Allowing each department to define independent security standards.",
+    "optionD": "Prioritizing security projects solely based on vendor recommendations.",
+    "correctOption": "A"
+  },
+  {
+    "text": "An organization experiences several unauthorized changes in production systems. Which process requires the MOST improvement?",
+    "optionA": "Incident Management",
+    "optionB": "Asset Management",
+    "optionC": "Change Management",
+    "optionD": "Capacity Planning",
+    "correctOption": "C"
+  },
+  {
+    "text": "Which of the following BEST protects personal information throughout its lifecycle?",
+    "optionA": "Applying appropriate security controls from creation through secure disposal.",
+    "optionB": "Encrypting only archived records.",
+    "optionC": "Retaining all customer data indefinitely.",
+    "optionD": "Allowing unrestricted access to operational staff.",
+    "correctOption": "A"
+  },
+  {
+    "text": "A security awareness program includes simulated phishing campaigns every quarter. What is the PRIMARY objective of this activity?",
+    "optionA": "Measure and improve employee resistance to phishing attacks.",
+    "optionB": "Replace email security controls.",
+    "optionC": "Eliminate all phishing attacks.",
+    "optionD": "Reduce software licensing costs.",
+    "correctOption": "A"
+  },
+  {
+    "text": "Following an enterprise-wide technology modernization initiative, executive management asks how the organization can ensure that future technology investments continue to support strategic business objectives while managing risk appropriately. Which governance practice BEST addresses this objective?",
+    "optionA": "Increasing the frequency of vulnerability scans.",
+    "optionB": "Conducting annual penetration tests for all systems.",
+    "optionC": "Aligning technology governance, enterprise architecture, and risk management with organizational strategy through continuous oversight.",
+    "optionD": "Requiring every project to use the same technology platform.",
+    "correctOption": "C"
+  }
+]
