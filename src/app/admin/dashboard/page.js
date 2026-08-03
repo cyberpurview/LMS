@@ -201,6 +201,7 @@ export default function AdminDashboard() {
         {activeTab === 'quizzes' && (
           <QuizzesModule 
             quizzes={quizzes}
+            onRefresh={fetchDashboardData}
             quizTitle={quizTitle}
             setQuizTitle={setQuizTitle}
             quizDuration={quizDuration}

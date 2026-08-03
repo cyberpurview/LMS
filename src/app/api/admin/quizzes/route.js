@@ -93,3 +93,38 @@ export async function POST(request) {
     return Response.json({ error: error.message }, { status: 500 });
   }
 }
+
+export async function PATCH(request) {
+  try {
+    const supabase = await createServerSideClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+
+    if (authError || !user) {
+      return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const role = user.user_metadata?.role || 'STUDENT';
+    if (role !== 'ADMIN') {
+      return Response.json({ error: 'Forbidden' }, { status: 403 });
+    }
+
+    const body = await request.json();
+    const { id, duration } = body; // duration in seconds
+
+    if (!id || duration === undefined) {
+      return Response.json({ error: 'Invalid request parameters' }, { status: 400 });
+    }
+
+    const { error } = await supabase
+      .from('quizzes')
+      .update({ duration: parseInt(duration) })
+      .eq('id', id);
+
+    if (error) throw error;
+
+    return Response.json({ success: true });
+  } catch (error) {
+    console.error('Error updating quiz duration:', error);
+    return Response.json({ error: error.message }, { status: 500 });
+  }
+}

@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { BookOpen, Upload, Clock, ClipboardList, Loader2, Play } from 'lucide-react';
+import { BookOpen, Upload, Clock, ClipboardList, Loader2, Play, Edit } from 'lucide-react';
 
 export default function QuizzesModule({
   quizzes,
+  onRefresh,
   quizTitle, setQuizTitle,
   quizDuration, setQuizDuration,
   creatingQuiz,
@@ -13,6 +14,33 @@ export default function QuizzesModule({
   setQuizJSON
 }) {
   const [dragActive, setDragActive] = useState(false);
+  const [editingQuizId, setEditingQuizId] = useState(null);
+  const [editingDuration, setEditingDuration] = useState('');
+  const [savingDuration, setSavingDuration] = useState(false);
+
+  const handleSaveDuration = async (quizId) => {
+    if (!editingDuration || parseInt(editingDuration) <= 0) return;
+    setSavingDuration(true);
+    try {
+      const res = await fetch('/api/admin/quizzes', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: quizId,
+          duration: parseInt(editingDuration) * 60 // Minutes to seconds
+        })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to update time');
+      
+      setEditingQuizId(null);
+      if (onRefresh) onRefresh();
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setSavingDuration(false);
+    }
+  };
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
@@ -212,17 +240,63 @@ export default function QuizzesModule({
                     alignItems: 'center'
                   }}
                 >
-                  <div>
-                    <h3 style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '4px' }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <h3 style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '4px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {quiz.title}
                     </h3>
-                    <div style={{ display: 'flex', gap: '12px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-                      <span>Duration: {Math.floor(quiz.duration / 60)} mins</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                      {editingQuizId === quiz.id ? (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', margin: '4px 0' }}>
+                          <input 
+                            type="number" 
+                            value={editingDuration}
+                            onChange={(e) => setEditingDuration(e.target.value)}
+                            style={{ width: '70px', padding: '2px 6px', fontSize: '0.75rem', border: '1px solid var(--border-color)', borderRadius: '4px' }}
+                            required
+                            min="1"
+                          />
+                          <button 
+                            type="button"
+                            onClick={() => handleSaveDuration(quiz.id)}
+                            disabled={savingDuration}
+                            className="btn btn-sm btn-primary"
+                            style={{ padding: '2px 8px', fontSize: '0.7rem', borderRadius: '4px' }}
+                          >
+                            {savingDuration ? 'Saving...' : 'Save'}
+                          </button>
+                          <button 
+                            type="button"
+                            onClick={() => setEditingQuizId(null)}
+                            className="btn btn-sm btn-outline"
+                            style={{ padding: '2px 8px', fontSize: '0.7rem', borderRadius: '4px', background: '#f1f5f9' }}
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      ) : (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <span>Duration: {Math.floor(quiz.duration / 60)} mins</span>
+                          <button 
+                            type="button"
+                            onClick={() => {
+                              setEditingQuizId(quiz.id);
+                              setEditingDuration(Math.floor(quiz.duration / 60).toString());
+                            }}
+                            style={{
+                              background: 'none', border: 'none', color: 'var(--primary)',
+                              cursor: 'pointer', padding: 0, fontSize: '0.72rem',
+                              display: 'inline-flex', alignItems: 'center', gap: '2px', fontWeight: '600'
+                            }}
+                          >
+                            <Edit size={11} /> Edit
+                          </button>
+                        </div>
+                      )}
                       <span>•</span>
                       <span>Created: {new Date(quiz.created_at).toLocaleDateString()}</span>
                     </div>
                   </div>
-                  <span className="badge badge-info" style={{ textTransform: 'none' }}>
+                  <span className="badge badge-info" style={{ textTransform: 'none', marginLeft: '12px', flexShrink: 0 }}>
                     {quiz.questions?.[0]?.count || 0} Qs
                   </span>
                 </div>
