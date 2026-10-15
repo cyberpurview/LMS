@@ -296,6 +296,17 @@ export default function LoginPage() {
           >
             {mode === 'login' ? 'New to CyberPurview? Create an account' : 'Back to sign in'}
           </button>
+          <p className="mt-5 text-center text-xs leading-5 text-slate-500">
+            {mode === 'signup' && 'By creating an account, you agree to our '}
+            <Link href="/terms" className="underline underline-offset-2">
+              Terms of Service
+            </Link>
+            {mode === 'signup' ? ' and acknowledge our ' : ' · '}
+            <Link href="/privacy" className="underline underline-offset-2">
+              Privacy Policy
+            </Link>
+            .
+          </p>
           <Link href="/" className="block text-center text-xs text-slate-400 mt-5">
             ← Back to CyberPurview
           </Link>

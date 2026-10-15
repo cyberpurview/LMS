@@ -391,7 +391,14 @@ export async function LandingPage() {
           </div>
           <div className="flex flex-wrap justify-between gap-3 border-t border-slate-100 pt-6 text-[10px] text-slate-400">
             <p>© {new Date().getFullYear()} CyberPurview. Keep learning.</p>
-            <p>Learn at your pace. Build lasting skills.</p>
+            <nav aria-label="Legal" className="flex gap-5 text-xs text-slate-500">
+              <Link href="/privacy" className="hover:text-brand-600">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-brand-600">
+                Terms of Service
+              </Link>
+            </nav>
             <p>
               Photography from{' '}
               <a
