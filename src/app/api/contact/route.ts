@@ -10,8 +10,20 @@ export const maxDuration = 30
 const headers = { 'Cache-Control': 'no-store' }
 const reply = (error: string, status: number) => NextResponse.json({ error }, { status, headers })
 export async function POST(request: NextRequest) {
-  if (request.headers.get('origin') !== request.nextUrl.origin)
+  const originHeader = request.headers.get('origin')
+  try {
+    const origin = new URL(originHeader || '')
+    if (
+      origin.origin !== originHeader ||
+      origin.host !== request.headers.get('host') ||
+      !['http:', 'https:'].includes(origin.protocol) ||
+      (process.env.NODE_ENV === 'production' && origin.protocol !== 'https:') ||
+      request.headers.get('sec-fetch-site') === 'cross-site'
+    )
+      return reply('Invalid request origin.', 403)
+  } catch {
     return reply('Invalid request origin.', 403)
+  }
   if (request.headers.get('content-type')?.split(';')[0].trim() !== 'application/json')
     return reply('Send a JSON request.', 415)
   try {

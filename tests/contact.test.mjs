@@ -35,6 +35,7 @@ async function routeFixture({ quota = 'allowed', providerOK = true, finishError 
     {
       exports,
       Date,
+      URL,
       JSON,
       Buffer,
       AbortSignal,
@@ -79,7 +80,12 @@ async function routeFixture({ quota = 'allowed', providerOK = true, finishError 
   const post = async (data = valid(), origin = 'https://example.test') => {
     const request = new Request('https://example.test/api/contact', {
       method: 'POST',
-      headers: { origin, 'content-type': 'application/json', 'x-forwarded-for': '192.0.2.1' },
+      headers: {
+        origin,
+        host: 'example.test',
+        'content-type': 'application/json',
+        'x-forwarded-for': '192.0.2.1',
+      },
       body: JSON.stringify(data),
     })
     request.nextUrl = new URL(request.url)
