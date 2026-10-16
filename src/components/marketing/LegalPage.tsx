@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { LandingHeader } from './LandingHeader'
 
-export const LEGAL_CONTACT = 'cyberpurview@gmail.com'
+export const LEGAL_CONTACT = '/contact'
 
 export function LegalPage({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -24,9 +24,9 @@ export function LegalPage({ title, children }: { title: string; children: ReactN
         </article>
         <footer className="mt-12 border-t border-slate-200 pt-6 text-sm text-slate-500">
           Cyber Purview LLC ·{' '}
-          <a href={`mailto:${LEGAL_CONTACT}`} className="text-brand-600">
-            {LEGAL_CONTACT}
-          </a>
+          <Link href={LEGAL_CONTACT} className="text-brand-600">
+            Contact us
+          </Link>
         </footer>
       </main>
     </div>

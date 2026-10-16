@@ -15,8 +15,8 @@ export default function PrivacyPage() {
         <p>
           Cyber Purview LLC operates CyberPurview, a platform for online courses, assessments and
           certificates. This policy explains how we handle information when you browse, create an
-          account, learn or teach. Contact us at{' '}
-          <a href={`mailto:${LEGAL_CONTACT}`}>{LEGAL_CONTACT}</a> with privacy questions.
+          account, learn or teach. Contact us at <Link href={LEGAL_CONTACT}>our contact form</Link>{' '}
+          with privacy questions.
         </p>
       </section>
       <section>

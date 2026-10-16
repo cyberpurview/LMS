@@ -26,8 +26,8 @@ export default function TermsPage() {
           Provide accurate account information, keep your sign-in credentials secure and use only
           accounts you are authorized to access. You are responsible for activity you authorize
           through your account. Report suspected unauthorized access to{' '}
-          <a href={`mailto:${LEGAL_CONTACT}`}>{LEGAL_CONTACT}</a>. Registering a learner account
-          does not grant instructor or administrator permissions; those permissions are assigned by
+          <Link href={LEGAL_CONTACT}>our contact form</Link>. Registering a learner account does not
+          grant instructor or administrator permissions; those permissions are assigned by
           authorized administrators.
         </p>
       </section>
@@ -134,7 +134,7 @@ export default function TermsPage() {
         <p>
           We may update these terms and will revise the date above. We will communicate material
           changes where appropriate and obtain further agreement where required. Contact{' '}
-          <a href={`mailto:${LEGAL_CONTACT}`}>{LEGAL_CONTACT}</a> about these terms or disputes.
+          <Link href={LEGAL_CONTACT}>our contact form</Link> about these terms or disputes.
           Mandatory laws and consumer rights applicable to you continue to apply.
         </p>
       </section>

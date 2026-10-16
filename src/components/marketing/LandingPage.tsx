@@ -371,7 +371,7 @@ export async function LandingPage() {
                 links: [
                   { label: 'Frequently asked questions', href: '#faq' },
                   { label: 'Help center', href: '/learner/help' },
-                  { label: 'Your learning workspace', href: '/login' },
+                  { label: 'Contact us', href: '/contact' },
                 ],
               },
             ].map((group) => (

@@ -616,6 +616,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      claim_contact_message: {
+        Args: { request_id: string; ip_hash: string; email_hash: string; payload_hash: string }
+        Returns: string
+      }
+      finish_contact_message: {
+        Args: { request_id: string; payload_hash: string }
+        Returns: undefined
+      }
       quiz_result: { Args: { quiz_id: string }; Returns: Json }
       quiz_attempt_action: {
         Args: {
