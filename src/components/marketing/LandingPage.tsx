@@ -399,29 +399,10 @@ export async function LandingPage() {
                 Terms of Service
               </Link>
             </nav>
-            <p>
-              Photography from{' '}
-              <a
-                href="https://www.pexels.com/photo/photography-of-woman-using-laptop-1181727/"
-                target="_blank"
-                rel="noreferrer"
-                className="underline underline-offset-2 hover:text-slate-600"
-              >
-                Pexels
-              </a>{' '}
-              &{' '}
-              <a
-                href="https://unsplash.com"
-                target="_blank"
-                rel="noreferrer"
-                className="underline underline-offset-2 hover:text-slate-600"
-              >
-                Unsplash
-              </a>
-            </p>
           </div>
         </div>
       </footer>
     </div>
   )
 }
+
