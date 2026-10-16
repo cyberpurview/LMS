@@ -60,11 +60,11 @@ to use the Supabase provider callback configured in Google Cloud.
 requires a Vercel plan supporting sub-daily cron jobs. Hobby allows daily cron
 only; do not silently slow delivery or upgrade a plan during deployment.
 
-AI generation is a durable database queue, processed by
-`scripts/ai-course-worker.mjs`. A normal Next.js deployment does not start this
-continuous worker. Provision a trusted production runner, or explicitly add an
-appropriate scheduler for `/api/cron/ai-courses`. Each invocation processes one
-outline or lesson, so scheduling frequency affects completion time. Use a
+AI generation is a durable database queue. Vercel production schedules
+`/api/cron/ai-courses` once per minute; each invocation processes one outline or
+lesson. Database leases prevent duplicate work, and the daily provider budget
+defaults to 100 requests. Generation continues with the browser closed.
+`scripts/ai-course-worker.mjs` remains available for local development. Use a
 server-side `Authorization: Bearer <CRON_SECRET>` header. Never expose this secret
 in browser code or URL parameters. Do not rely on a developer's local worker to
 keep production generation running. Configure deployment protection access for
