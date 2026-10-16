@@ -3236,4 +3236,131 @@ test('repeated AI failures notify once per job without per-retry notification sp
   await db.query("select public.ai_course_command('cancel',$1)", [{ id: f.id }])
 })
 
+test('learner history is owner-only, bounded and paginated across equal timestamps', async () => {
+  const q = await pricedQuizFixture(0)
+  const uid = await policyLearner()
+  const foreign = await policyLearner()
+  await db.exec('reset role')
+  const ids = Array.from({ length: 24 }, () => randomUUID())
+    .sort()
+    .reverse()
+  for (const id of ids)
+    await db.query(
+      `insert into public.quiz_attempts(id,learner_id,quiz_id,version,started_at,submitted_at,score,passed) values($1,$2,$3,1,'2026-01-01','2026-01-01',80,true)`,
+      [id, uid, q.id],
+    )
+  const foreignId = randomUUID()
+  await db.query(
+    `insert into public.quiz_attempts(id,learner_id,quiz_id,version) values($1,$2,$3,1)`,
+    [foreignId, foreign, q.id],
+  )
+  await as(uid)
+  const page = (await db.query('select public.learner_quiz_history($1) result', [q.id])).rows[0]
+    .result
+  assert.deepEqual(
+    page.items.map((x) => x.id),
+    ids.slice(0, 21),
+  )
+  const next = (await db.query('select public.learner_quiz_history($1,$2) result', [q.id, ids[19]]))
+    .rows[0].result
+  assert.deepEqual(
+    next.items.map((x) => x.id),
+    ids.slice(20),
+  )
+  await assert.rejects(
+    db.query('select public.learner_quiz_history(null,$1)', [foreignId]),
+    /Invalid history cursor/,
+  )
+  await assert.rejects(
+    db.query('select public.learner_quiz_attempt($1)', [foreignId]),
+    /Attempt not found/,
+  )
+  const otherQuiz = await pricedQuizFixture(0)
+  await as(uid)
+  assert.deepEqual(
+    (await db.query('select public.learner_quiz_history($1) result', [otherQuiz.id])).rows[0].result
+      .items,
+    [],
+  )
+  await as(tutor)
+  await assert.rejects(db.query('select public.learner_quiz_history()'), /Learner access required/)
+  await as(null, 'anon')
+  await assert.rejects(db.query('select public.learner_quiz_history()'), /permission denied/)
+})
+
+test('history preserves delayed feedback and hides active and legacy-version answers', async () => {
+  const q = await pricedQuizFixture(0, { maxAttempts: 3, feedbackPolicy: 'after_pass_or_last' })
+  const uid = await policyLearner()
+  await as(uid)
+  const a = (await db.query('select public.start_quiz($1) result', [q.id])).rows[0].result
+  await db.query('select public.submit_quiz($1,$2)', [
+    a.id,
+    { [q.questions[0].id]: q.questions[0].options[1].id },
+  ])
+  const detail = async (id) =>
+    (await db.query('select public.learner_quiz_attempt($1) result', [id])).rows[0].result
+  let r = await detail(a.id)
+  assert.equal(r.score, 0)
+  assert.equal(r.feedbackAvailable, false)
+  assert.deepEqual(r.questions, [])
+  assert.deepEqual(r.feedback, [])
+  const b = (await db.query('select public.start_quiz($1) result', [q.id])).rows[0].result
+  r = await detail(b.id)
+  assert.equal(r.completed, false)
+  assert.equal(r.score, null)
+  assert.deepEqual(r.answers, {})
+  await db.query('select public.submit_quiz($1,$2)', [
+    b.id,
+    { [q.questions[0].id]: q.questions[0].correctOptionId },
+  ])
+  r = await detail(a.id)
+  assert.equal(r.feedbackAvailable, true)
+  assert.equal(r.feedback[0].correctOptionId, q.questions[0].correctOptionId)
+  assert.equal(r.questions[0].options.length, 2)
+  const active = (await db.query('select public.start_quiz($1) result', [q.id])).rows[0].result
+  assert.equal((await detail(active.id)).feedbackAvailable, false)
+  await db.exec('reset role')
+  await db.query('update public.quiz_attempts set version=0 where id=$1', [a.id])
+  await as(uid)
+  r = await detail(a.id)
+  assert.equal(r.score, 0)
+  assert.equal(r.feedbackAvailable, false)
+  assert.deepEqual(r.questions, [])
+  assert.deepEqual(r.feedback, [])
+  assert.equal(
+    (await db.query('select count(*)::int n from public.quiz_attempts where quiz_id=$1', [q.id]))
+      .rows[0].n,
+    3,
+  )
+  assert.equal(
+    (await db.query('select count(*)::int n from public.certificates where quiz_id=$1', [q.id]))
+      .rows[0].n,
+    1,
+  )
+})
+
+test('expired history remains readable after access is removed, without disclosing answers', async () => {
+  const q = await pricedQuizFixture(0)
+  const uid = await policyLearner()
+  await as(uid)
+  const a = (await db.query('select public.start_quiz($1) result', [q.id])).rows[0].result
+  await db.exec('reset role')
+  await db.query(
+    "update public.quiz_attempts set started_at=clock_timestamp()-interval '1 hour' where id=$1",
+    [a.id],
+  )
+  await db.query("update public.quizzes set status='draft' where id=$1", [q.id])
+  await as(uid)
+  const history = (await db.query('select public.learner_quiz_history($1) result', [q.id])).rows[0]
+    .result
+  assert.equal(history.items[0].status, 'Expired')
+  assert.equal(history.items[0].score, 0)
+  assert.equal(history.items[0].canResume, false)
+  const detail = (await db.query('select public.learner_quiz_attempt($1) result', [a.id])).rows[0]
+    .result
+  assert.equal(detail.completed, true)
+  assert.equal(detail.feedbackAvailable, false)
+  assert.deepEqual(detail.questions, [])
+})
+
 after(() => db.close())

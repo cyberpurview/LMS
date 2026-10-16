@@ -80,13 +80,15 @@ function pageTitle(path: string) {
     return detail ? 'Course overview' : 'Courses'
   }
   if (section === 'quizzes')
-    return detail === 'new'
-      ? 'Create quiz'
-      : action === 'edit'
-        ? 'Quiz editor'
-        : detail
-          ? 'Assessment'
-          : 'Quizzes'
+    return detail === 'history'
+      ? 'Attempt history'
+      : detail === 'new'
+        ? 'Create quiz'
+        : action === 'edit'
+          ? 'Quiz editor'
+          : detail
+            ? 'Assessment'
+            : 'Quizzes'
   if (section === 'students' && detail) return 'Student progress'
   return (
     (
@@ -545,6 +547,8 @@ export function LmsProvider({ children, user }: { children: React.ReactNode; use
     const result = await send(command)
     if (
       command.type === 'quizResult' ||
+      command.type === 'quizHistory' ||
+      command.type === 'quizAttemptResult' ||
       (command.type === 'quizAttempts' && command.action === 'list')
     )
       return result

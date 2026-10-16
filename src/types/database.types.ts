@@ -625,6 +625,11 @@ export type Database = {
         Returns: undefined
       }
       quiz_result: { Args: { quiz_id: string }; Returns: Json }
+      learner_quiz_history: {
+        Args: { filter_quiz?: string; after_attempt?: string }
+        Returns: Json
+      }
+      learner_quiz_attempt: { Args: { requested_attempt: string }; Returns: Json }
       quiz_attempt_action: {
         Args: {
           action: string

@@ -77,7 +77,7 @@ export async function loadWorkspace(
   )
   const dashboard = !section || section === 'analytics'
   const people = section === 'users' || section === 'students'
-  const quizPage = section === 'quizzes'
+  const quizPage = section === 'quizzes' && !focus.endsWith('/history')
   const coursePage = section === 'courses'
   const creating = focus.endsWith('/new') || focus.endsWith('/courses/ai')
   const courseDetail = match?.[1] === 'courses'

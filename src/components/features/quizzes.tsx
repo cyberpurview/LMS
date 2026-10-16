@@ -49,6 +49,11 @@ export function QuizList({ role }: { role: Role }) {
   return (
     <FeatureShell role={role} title="Quizzes">
       <Heading title={role === 'learner' ? 'Your quizzes' : 'Quizzes'}>
+        {role === 'learner' && (
+          <Link href="/learner/quizzes/history" className={secondaryClass}>
+            Attempt history
+          </Link>
+        )}
         {role !== 'learner' && (
           <Link href={`/${role}/quizzes/new`} className={primaryClass}>
             <Plus className="w-4 h-4" />
@@ -148,6 +153,14 @@ export function QuizList({ role }: { role: Role }) {
                         ? 'Continue draft'
                         : 'Edit assessment'}
                 </Link>
+                {role === 'learner' && (
+                  <Link
+                    href={`/learner/quizzes/history?quiz=${q.id}`}
+                    className="mt-3 block text-center text-sm font-medium text-brand-700 hover:underline"
+                  >
+                    View history
+                  </Link>
+                )}
               </Panel>
             )
           })}
@@ -431,7 +444,13 @@ export function QuizRunner({ id }: { id: string }) {
         <Heading
           title={quiz.title}
           description={`${quiz.questionCount ?? quiz.questions.length} questions · ${quiz.timeLimit} minutes · ${quiz.passingScore}% to pass`}
-        />
+        >
+          {(!started || result !== null) && (
+            <Link href={`/learner/quizzes/history?quiz=${quiz.id}`} className={secondaryClass}>
+              View history
+            </Link>
+          )}
+        </Heading>
         {!started ? (
           <Panel>
             {(quiz.thumbnail || state.courses.find((c) => c.id === quiz.courseId)?.thumbnail) && (

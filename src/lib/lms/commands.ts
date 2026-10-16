@@ -205,6 +205,8 @@ export const commandSchema = z.discriminatedUnion('type', [
   z.object({ type: z.literal('complete'), lessonId: id }),
   z.object({ type: z.literal('startQuiz'), quizId: id }),
   z.object({ type: z.literal('quizResult'), quizId: id }),
+  z.object({ type: z.literal('quizHistory'), quizId: id.optional(), afterId: id.optional() }),
+  z.object({ type: z.literal('quizAttemptResult'), attemptId: id }),
   z
     .object({
       type: z.literal('quizAttempts'),

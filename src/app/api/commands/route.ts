@@ -11,8 +11,20 @@ import { cleanupCourseResources } from '@/lib/server/course-resource-cleanup'
 
 export async function POST(request: NextRequest) {
   // Cookie-authenticated writes must originate from this application.
-  if (request.headers.get('origin') !== request.nextUrl.origin)
+  const originHeader = request.headers.get('origin')
+  try {
+    const origin = new URL(originHeader || '')
+    if (
+      origin.origin !== originHeader ||
+      origin.host !== (request.headers.get('host') || request.nextUrl.host) ||
+      !['http:', 'https:'].includes(origin.protocol) ||
+      (process.env.NODE_ENV === 'production' && origin.protocol !== 'https:') ||
+      request.headers.get('sec-fetch-site') === 'cross-site'
+    )
+      return NextResponse.json({ error: 'Invalid request origin' }, { status: 403 })
+  } catch {
     return NextResponse.json({ error: 'Invalid request origin' }, { status: 403 })
+  }
   if (Number(request.headers.get('content-length') || 0) > 524288)
     return NextResponse.json({ error: 'Request too large' }, { status: 413 })
   try {
@@ -56,6 +68,15 @@ export async function POST(request: NextRequest) {
         break
       case 'quizResult':
         result = await client.rpc('quiz_result', { quiz_id: command.quizId })
+        break
+      case 'quizHistory':
+        result = await client.rpc('learner_quiz_history', {
+          filter_quiz: command.quizId,
+          after_attempt: command.afterId,
+        })
+        break
+      case 'quizAttemptResult':
+        result = await client.rpc('learner_quiz_attempt', { requested_attempt: command.attemptId })
         break
       case 'quizAttempts':
         result = await client.rpc('quiz_attempt_action', {
