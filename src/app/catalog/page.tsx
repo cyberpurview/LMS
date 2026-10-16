@@ -39,9 +39,9 @@ export default async function Catalog({
           className="my-8 grid items-end gap-3 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_auto]"
         >
           <label className="text-sm font-medium">
-            Search courses
+            <span className="sr-only">Search courses</span>
             <input
-              className={field + ' mt-2'}
+              className={field}
               type="search"
               name="q"
               maxLength={200}
@@ -50,8 +50,8 @@ export default async function Catalog({
             />
           </label>
           <label className="text-sm font-medium">
-            Category
-            <select name="category" defaultValue={filters.category} className={field + ' mt-2'}>
+            <span className="sr-only">Category</span>
+            <select name="category" defaultValue={filters.category} className={field}>
               <option value="">All categories</option>
               {categories.map((c) => (
                 <option key={c}>{c}</option>
@@ -59,8 +59,8 @@ export default async function Catalog({
             </select>
           </label>
           <label className="text-sm font-medium">
-            Level
-            <select name="level" defaultValue={filters.level} className={field + ' mt-2'}>
+            <span className="sr-only">Level</span>
+            <select name="level" defaultValue={filters.level} className={field}>
               <option value="">All levels</option>
               {['Beginner', 'Intermediate', 'Advanced'].map((l) => (
                 <option key={l}>{l}</option>
