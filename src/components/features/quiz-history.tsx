@@ -23,6 +23,7 @@ type Result = {
   score: number | null
   passed: boolean
   completed: boolean
+  status: string
   feedbackAvailable: boolean
   questions: QuizQuestion[]
   answers: Record<string, string>
@@ -45,9 +46,11 @@ export function QuizHistory() {
   const [error, setError] = useState('')
   const [retry, setRetry] = useState(0)
   const generation = useRef(0)
+  const loadingPage = useRef<number | null>(null)
   const historyUrl = `/learner/quizzes/history${quizId ? `?quiz=${encodeURIComponent(quizId)}` : ''}`
   useEffect(() => {
     const current = ++generation.current
+    loadingPage.current = null
     setBusy(true)
     setError('')
     setResult(null)
@@ -80,8 +83,9 @@ export function QuizHistory() {
   }, [quizId, attemptId, retry])
 
   async function loadMore() {
-    if (busy || !items.length) return
+    if (busy || !items.length || loadingPage.current === generation.current) return
     const current = generation.current
+    loadingPage.current = current
     setBusy(true)
     setError('')
     try {
@@ -91,13 +95,22 @@ export function QuizHistory() {
         afterId: items[items.length - 1].id,
       })) as { items: Attempt[] }
       if (generation.current !== current) return
-      setItems((previous) => [...previous, ...value.items.slice(0, 20)])
+      setItems((previous) =>
+        Array.from(
+          new Map(
+            [...previous, ...value.items.slice(0, 20)].map((item) => [item.id, item]),
+          ).values(),
+        ),
+      )
       setMore(value.items.length > 20)
     } catch (cause) {
       if (generation.current === current)
         setError(cause instanceof Error ? cause.message : 'Unable to load more attempts.')
     } finally {
-      if (generation.current === current) setBusy(false)
+      if (generation.current === current) {
+        loadingPage.current = null
+        setBusy(false)
+      }
     }
   }
 
@@ -182,9 +195,7 @@ export function QuizHistory() {
             <h2 className="text-xl font-semibold">{result.title}</h2>
             <p className="mt-1 text-sm text-slate-500">{date(result.startedAt)}</p>
             <p className="mt-4 text-lg font-semibold">
-              {result.completed
-                ? `${result.score}% · ${result.passed ? 'Passed' : 'Not passed'}`
-                : 'In progress'}
+              {result.completed ? `${result.score}% · ${result.status}` : 'In progress'}
             </p>
             {!result.feedbackAvailable && (
               <p className="mt-3 text-sm text-slate-500">

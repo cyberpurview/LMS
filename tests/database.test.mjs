@@ -3359,8 +3359,38 @@ test('expired history remains readable after access is removed, without disclosi
   const detail = (await db.query('select public.learner_quiz_attempt($1) result', [a.id])).rows[0]
     .result
   assert.equal(detail.completed, true)
+  assert.equal(detail.status, 'Expired')
   assert.equal(detail.feedbackAvailable, false)
   assert.deepEqual(detail.questions, [])
+})
+
+test('history agrees with the server resume grace period and rejects disabled accounts', async () => {
+  const q = await pricedQuizFixture(0)
+  const uid = await policyLearner()
+  await as(uid)
+  const a = (await db.query('select public.start_quiz($1) result', [q.id])).rows[0].result
+  await db.exec('reset role')
+  await db.query(
+    "update public.quiz_attempts set started_at=clock_timestamp()-interval '10 minutes 1 second' where id=$1",
+    [a.id],
+  )
+  await as(uid)
+  const history = (await db.query('select public.learner_quiz_history($1) result', [q.id])).rows[0]
+    .result
+  assert.equal(history.items[0].status, 'In progress')
+  assert.equal(history.items[0].canResume, true)
+  const detail = (await db.query('select public.learner_quiz_attempt($1) result', [a.id])).rows[0]
+    .result
+  assert.equal(detail.status, 'In progress')
+  assert.equal(detail.feedbackAvailable, false)
+  await db.exec('reset role')
+  await db.query('update public.profiles set is_active=false where id=$1', [uid])
+  await as(uid)
+  await assert.rejects(db.query('select public.learner_quiz_history()'), /Learner access required/)
+  await assert.rejects(
+    db.query('select public.learner_quiz_attempt($1)', [a.id]),
+    /Learner access required/,
+  )
 })
 
 after(() => db.close())

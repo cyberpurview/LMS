@@ -16,6 +16,9 @@ test('history paginates on demand and opens an individual read-only result', asy
   globalThis.IS_REACT_ACT_ENVIRONMENT = true
   let params = new URLSearchParams('quiz=quiz-id')
   const calls = []
+  let failPage = true
+  let resolvePage
+  let resolveFirst
   const items = Array.from({ length: 21 }, (_, i) => ({
     id: `attempt-${i}`,
     quizId: 'quiz-id',
@@ -37,6 +40,7 @@ test('history paginates on demand and opens an individual read-only result', asy
     }).outputText,
     {
       exports,
+      Error,
       URLSearchParams,
       window: dom.window,
       require: (name) => {
@@ -58,6 +62,10 @@ test('history paginates on demand and opens an individual read-only result', asy
             useLms: () => ({
               execute: async (command) => {
                 calls.push(command)
+                if (command.type === 'quizHistory' && command.quizId === 'slow')
+                  return new Promise((resolve) => {
+                    resolveFirst = resolve
+                  })
                 if (command.type === 'quizAttemptResult')
                   return {
                     id: command.attemptId,
@@ -66,12 +74,22 @@ test('history paginates on demand and opens an individual read-only result', asy
                     score: 80,
                     passed: true,
                     completed: true,
+                    status: 'Passed',
                     feedbackAvailable: true,
                     questions: [{ id: 'q' }],
                     answers: {},
                     feedback: [],
                   }
-                return { items: command.afterId ? items.slice(20) : items }
+                if (command.afterId) {
+                  if (failPage) {
+                    failPage = false
+                    throw new Error('Temporary failure')
+                  }
+                  return new Promise((resolve) => {
+                    resolvePage = resolve
+                  })
+                }
+                return { items }
               },
             }),
           }
@@ -91,13 +109,41 @@ test('history paginates on demand and opens an individual read-only result', asy
       [...document.querySelectorAll('button')].find((b) => b.textContent === 'Load more').click(),
     )
     assert.equal(calls[1].afterId, 'attempt-19')
+    assert.equal(document.querySelectorAll('li').length, 20)
+    assert.match(document.body.textContent, /Temporary failure/)
+    await React.act(async () => {
+      const retry = [...document.querySelectorAll('button')].find(
+        (b) => b.textContent === 'Try again',
+      )
+      retry.click()
+      retry.click()
+    })
+    assert.equal(calls.length, 3)
+    await React.act(async () => resolvePage({ items: items.slice(20) }))
     assert.equal(document.querySelectorAll('li').length, 21)
     assert.equal(document.querySelector('button'), null)
     params = new URLSearchParams('quiz=quiz-id&attempt=attempt-0')
     await render()
-    assert.equal(calls[2].type, 'quizAttemptResult')
+    assert.equal(calls[3].type, 'quizAttemptResult')
     assert.match(document.body.textContent, /80% · Passed/)
     assert.match(document.body.textContent, /Review: 1 questions/)
+    params = new URLSearchParams('quiz=quiz-id')
+    await render()
+    await React.act(async () =>
+      [...document.querySelectorAll('button')].find((b) => b.textContent === 'Load more').click(),
+    )
+    const resolveStalePage = resolvePage
+    params = new URLSearchParams('attempt=attempt-0')
+    await render()
+    await React.act(async () => resolveStalePage({ items: items.slice(20) }))
+    assert.match(document.body.textContent, /Review: 1 questions/)
+    assert.equal(document.querySelectorAll('li').length, 0)
+    params = new URLSearchParams('quiz=slow')
+    await render()
+    params = new URLSearchParams('quiz=quiz-id')
+    await render()
+    await React.act(async () => resolveFirst({ items: [] }))
+    assert.equal(document.querySelectorAll('li').length, 20)
     assert.equal(
       calls.some((c) => ['startQuiz', 'submitQuiz'].includes(c.type)),
       false,
